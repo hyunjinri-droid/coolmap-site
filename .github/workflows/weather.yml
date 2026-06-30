@@ -27,6 +27,7 @@ jobs:
           if ! git diff --quiet -- src/data/weather.json; then
             git add src/data/weather.json
             git commit -m "chore: 기상 데이터 갱신"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
             git push
           else
             echo "변경 없음"

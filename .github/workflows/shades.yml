@@ -27,6 +27,7 @@ jobs:
           if ! git diff --quiet -- src/data/shades.json; then
             git add src/data/shades.json
             git commit -m "chore: 폭염저감시설(그늘막) 데이터 갱신"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
             git push
           else
             echo "변경 없음"

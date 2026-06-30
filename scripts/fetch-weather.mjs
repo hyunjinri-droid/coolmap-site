@@ -120,10 +120,21 @@ async function fetchGrid(nx, ny, base_date, base_time) {
   url.searchParams.set("ny", String(ny));
 
   const res = await fetch(url);
+  if (res.status === 429) {
+    await sleep(1500);
+    const retryRes = await fetch(url);
+    if (!retryRes.ok) throw new Error(`KMA API HTTP ${retryRes.status}`);
+    const json = await retryRes.json();
+    return json?.response?.body?.items?.item ?? [];
+  }
   if (!res.ok) throw new Error(`KMA API HTTP ${res.status}`);
   const json = await res.json();
   const items = json?.response?.body?.items?.item ?? [];
   return items;
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 function pickNearestForecast(items, category) {
@@ -219,6 +230,8 @@ async function main() {
     } catch (err) {
       console.error(`${center.gu} 날씨 조회 실패:`, err.message);
     }
+    // KMA API 호출량 제한(초당 요청 수)에 걸리지 않도록 구별 호출 사이에 간격을 둔다.
+    await sleep(300);
   }
 
   const output = {
