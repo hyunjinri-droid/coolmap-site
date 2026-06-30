@@ -16,13 +16,17 @@ import path from "node:path";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const API_KEY = process.env.SAFEMAP_API_KEY;
 const DEBUG = process.env.DEBUG === "1";
+// GitHub Actions(Azure 데이터센터 IP)에서 safemap.go.kr로의 직접 연결이 구조적으로
+// 막혀 있어, workers/safemap-proxy에 배포한 Cloudflare Worker를 경유한다.
+// SAFEMAP_PROXY_URL이 없으면 직접 연결을 시도한다(로컬 실행 등).
+const PROXY_URL = process.env.SAFEMAP_PROXY_URL;
 
-// http(80)가 GitHub Actions 환경에서 연결 자체가 막히는 사례가 있어 https를 우선 시도하고
-// 실패하면 http로 폴백한다.
-const BASE_URLS = [
-  "https://www.safemap.go.kr/openApiService/data/getCoolingCenterData.do",
-  "http://www.safemap.go.kr/openApiService/data/getCoolingCenterData.do",
-];
+const BASE_URLS = PROXY_URL
+  ? [`${PROXY_URL.replace(/\/$/, "")}/openApiService/data/getCoolingCenterData.do`]
+  : [
+      "https://www.safemap.go.kr/openApiService/data/getCoolingCenterData.do",
+      "http://www.safemap.go.kr/openApiService/data/getCoolingCenterData.do",
+    ];
 const PAGE_SIZE = 1000;
 
 const SEOUL_GU = [
