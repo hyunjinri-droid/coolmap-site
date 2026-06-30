@@ -22,6 +22,7 @@ GitHub 저장소 Settings → Secrets and variables → Actions 에 등록:
 | 시크릿 | 용도 |
 |---|---|
 | `KMA_API_KEY` | 공공데이터포털 기상청 단기예보 API 인증키. 없으면 `weather.yml`이 건너뜀 |
+| `SAFEMAP_API_KEY` | 행정안전부 생활안전지도 무더위쉼터 오픈API 인증키. 없으면 `shelters.yml`이 건너뜀 |
 | `CLOUDFLARE_API_TOKEN` | Cloudflare Pages 배포 권한 토큰 |
 | `CLOUDFLARE_ACCOUNT_ID` | Cloudflare 계정 ID |
 
@@ -29,7 +30,12 @@ Cloudflare 대시보드에서 `coolmap-site` Pages 프로젝트를 미리 생성
 `cool.babyfairschedule.co.kr` 커스텀 도메인을 연결해야 `deploy.yml`이 정상 동작합니다.
 
 - `.github/workflows/weather.yml`: 3시간마다 기상 데이터 갱신 후 커밋
+- `.github/workflows/shelters.yml`: 매주 월요일 무더위쉼터 데이터 갱신 후 커밋
 - `.github/workflows/deploy.yml`: `main` 브랜치 push 시 Cloudflare Pages 배포
+
+무더위쉼터 데이터(`src/data/shelters.json`)가 채워지면 더미 쉼터 항목 대신
+실데이터가 자동으로 사용된다(`src/lib/places.ts`). 그늘막/수변공간은 아직
+더미 데이터.
 
 ## 다음 단계 (설계문서 8장 참고)
 

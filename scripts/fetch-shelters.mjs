@@ -1,0 +1,131 @@
+#!/usr/bin/env node
+// 행정안전부 생활안전지도(safemap.go.kr) 무더위쉼터 오픈API를 받아
+// src/data/shelters.json (Place[] 스키마)으로 빌드한다.
+//
+// 필요 환경변수: SAFEMAP_API_KEY (생활안전지도 오픈API 인증키)
+//
+// 주의: safemap 응답 필드명은 시설유형에 따라 약간씩 다를 수 있어
+// 여러 후보 키를 시도한다. 처음 실행 시 DEBUG=1 로 실행해서
+// 콘솔에 찍히는 원본 item 구조를 한 번 확인하고, 실제 필드명과
+// 다르면 FIELD_CANDIDATES를 조정할 것.
+
+import { writeFile } from "node:fs/promises";
+import { fileURLToPath } from "node:url";
+import path from "node:path";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const API_KEY = process.env.SAFEMAP_API_KEY;
+const DEBUG = process.env.DEBUG === "1";
+
+const BASE_URL = "http://www.safemap.go.kr/openApiService/data/getCoolingCenterData.do";
+const PAGE_SIZE = 1000;
+
+const SEOUL_GU = [
+  "종로구", "중구", "용산구", "성동구", "광진구", "동대문구", "중랑구",
+  "성북구", "강북구", "도봉구", "노원구", "은평구", "서대문구", "마포구",
+  "양천구", "강서구", "구로구", "금천구", "영등포구", "동작구", "관악구",
+  "서초구", "강남구", "송파구", "강동구",
+];
+
+// 유아 동반에 부적합할 가능성이 높은 시설유형 키워드 (경로당/노인 전용 등)
+const SENIOR_ONLY_KEYWORDS = ["경로당", "노인정", "노인복지", "노인회관"];
+
+function pick(obj, keys) {
+  for (const k of keys) {
+    if (obj[k] !== undefined && obj[k] !== null && obj[k] !== "") return obj[k];
+  }
+  return undefined;
+}
+
+function extractGu(address) {
+  if (!address) return null;
+  const match = SEOUL_GU.find((gu) => address.includes(gu));
+  return match ?? null;
+}
+
+async function fetchPage(pageIndex) {
+  const url = new URL(BASE_URL);
+  url.searchParams.set("serviceKey", API_KEY);
+  url.searchParams.set("type", "json");
+  url.searchParams.set("pageIndex", String(pageIndex));
+  url.searchParams.set("numOfRows", String(PAGE_SIZE));
+
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`safemap API HTTP ${res.status}`);
+  const json = await res.json();
+  // safemap 응답 포맷: { result: { totalCount, item: [...] } } 형태가 일반적이나
+  // 변형 가능성이 있어 여러 경로를 시도한다.
+  const items =
+    json?.result?.item ?? json?.response?.body?.items?.item ?? json?.items ?? [];
+  const totalCount = Number(json?.result?.totalCount ?? items.length);
+  return { items: Array.isArray(items) ? items : [items].filter(Boolean), totalCount };
+}
+
+function toPlace(raw, index) {
+  const name = pick(raw, ["FCLTY_NM", "fcltyNm", "name"]);
+  const roadAddr = pick(raw, ["RN_ADRES", "ROAD_NM_ADRES", "rnAdres"]);
+  const lotAddr = pick(raw, ["LOTNO_ADRES", "lotnoAdres"]);
+  const address = roadAddr || lotAddr;
+  const lat = Number(pick(raw, ["LA", "la", "lat"]));
+  const lng = Number(pick(raw, ["LO", "lo", "lng"]));
+  const fcltyTy = pick(raw, ["FCLTY_TY", "HOT_PLACE_TY_NM", "fcltyTy"]) ?? "";
+  const hours = pick(raw, ["USE_AT", "OPER_TIME", "useAt"]);
+
+  if (!name || !address || Number.isNaN(lat) || Number.isNaN(lng)) return null;
+
+  const gu = extractGu(address);
+  if (!gu) return null; // MVP 범위: 서울 25개구만
+
+  const familyFriendly = !SENIOR_ONLY_KEYWORDS.some((kw) => fcltyTy.includes(kw));
+
+  return {
+    id: `shelter-safemap-${index}`,
+    name,
+    category: "shelter",
+    gu,
+    address,
+    lat,
+    lng,
+    hours: hours || undefined,
+    familyFriendly,
+    note: fcltyTy ? `시설유형: ${fcltyTy}` : undefined,
+  };
+}
+
+async function main() {
+  if (!API_KEY) {
+    console.error("SAFEMAP_API_KEY 환경변수가 없어 shelters.json 빌드를 건너뜁니다.");
+    process.exit(0);
+  }
+
+  const places = [];
+  let pageIndex = 1;
+  let totalCount = Infinity;
+
+  while (places.length < totalCount && pageIndex < 50) {
+    const { items, totalCount: tc } = await fetchPage(pageIndex);
+    totalCount = tc || items.length;
+    if (DEBUG && pageIndex === 1) {
+      console.log("샘플 원본 item:", JSON.stringify(items[0], null, 2));
+    }
+    if (items.length === 0) break;
+
+    items.forEach((raw, i) => {
+      const place = toPlace(raw, `${pageIndex}-${i}`);
+      if (place) places.push(place);
+    });
+
+    pageIndex += 1;
+  }
+
+  await writeFile(
+    path.join(__dirname, "../src/data/shelters.json"),
+    JSON.stringify(places, null, 2)
+  );
+  console.log(`shelters.json 작성 완료: 서울 ${places.length}곳`);
+}
+
+main().catch((err) => {
+  console.error("무더위쉼터 데이터 빌드 실패:", err);
+  process.exit(1);
+});

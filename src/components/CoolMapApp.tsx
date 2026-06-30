@@ -6,11 +6,11 @@ import FilterBar, { FilterValue } from "./FilterBar";
 import StatusBadge from "./StatusBadge";
 import DetailSheet from "./DetailSheet";
 import SearchHeader from "./SearchHeader";
-import placesData from "@/data/places.json";
 import type { Place } from "@/lib/types";
 import { getWeatherStatus } from "@/lib/weather";
+import { getAllPlaces } from "@/lib/places";
 
-const ALL_PLACES = placesData as Place[];
+const ALL_PLACES = getAllPlaces();
 const SEOUL_CENTER: [number, number] = [37.5665, 126.978];
 
 export default function CoolMapApp({ gu }: { gu?: string }) {
