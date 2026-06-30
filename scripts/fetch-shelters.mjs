@@ -17,7 +17,12 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const API_KEY = process.env.SAFEMAP_API_KEY;
 const DEBUG = process.env.DEBUG === "1";
 
-const BASE_URL = "http://www.safemap.go.kr/openApiService/data/getCoolingCenterData.do";
+// http(80)가 GitHub Actions 환경에서 연결 자체가 막히는 사례가 있어 https를 우선 시도하고
+// 실패하면 http로 폴백한다.
+const BASE_URLS = [
+  "https://www.safemap.go.kr/openApiService/data/getCoolingCenterData.do",
+  "http://www.safemap.go.kr/openApiService/data/getCoolingCenterData.do",
+];
 const PAGE_SIZE = 1000;
 
 const SEOUL_GU = [
@@ -64,13 +69,23 @@ async function fetchWithRetry(url, retries = 5, baseDelayMs = 3000) {
 }
 
 async function fetchPage(pageIndex) {
-  const url = new URL(BASE_URL);
-  url.searchParams.set("serviceKey", API_KEY);
-  url.searchParams.set("type", "json");
-  url.searchParams.set("pageIndex", String(pageIndex));
-  url.searchParams.set("numOfRows", String(PAGE_SIZE));
-
-  const res = await fetchWithRetry(url);
+  let res;
+  let lastErr;
+  for (const baseUrl of BASE_URLS) {
+    const url = new URL(baseUrl);
+    url.searchParams.set("serviceKey", API_KEY);
+    url.searchParams.set("type", "json");
+    url.searchParams.set("pageIndex", String(pageIndex));
+    url.searchParams.set("numOfRows", String(PAGE_SIZE));
+    try {
+      res = await fetchWithRetry(url, 3);
+      break;
+    } catch (err) {
+      lastErr = err;
+      console.error(`${baseUrl} 연결 실패, 다음 URL 시도:`, err.message);
+    }
+  }
+  if (!res) throw lastErr;
   if (!res.ok) throw new Error(`safemap API HTTP ${res.status}`);
   const json = await res.json();
   // safemap 응답 포맷: { result: { totalCount, item: [...] } } 형태가 일반적이나
