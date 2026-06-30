@@ -116,10 +116,41 @@ body {
   white-space: nowrap;
 }
 
+.locate-btn:disabled {
+  opacity: 0.6;
+}
+
+.locate-banner {
+  padding: 8px 12px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 13px;
+  border-bottom: 1px solid #fecaca;
+}
+
 .map-wrap {
   position: relative;
   flex: 1;
   min-height: 0;
+}
+
+.empty-state {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 500;
+  background: rgba(15, 23, 42, 0.85);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  text-align: center;
+  max-width: 80%;
+}
+
+.detail-sheet-ad {
+  margin-top: 16px;
 }
 
 .map-wrap .leaflet-container {

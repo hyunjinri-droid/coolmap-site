@@ -4,9 +4,15 @@ interface SearchHeaderProps {
   query: string;
   onQueryChange: (value: string) => void;
   onLocate: () => void;
+  locating?: boolean;
 }
 
-export default function SearchHeader({ query, onQueryChange, onLocate }: SearchHeaderProps) {
+export default function SearchHeader({
+  query,
+  onQueryChange,
+  onLocate,
+  locating,
+}: SearchHeaderProps) {
   return (
     <div className="search-header">
       <input
@@ -16,8 +22,8 @@ export default function SearchHeader({ query, onQueryChange, onLocate }: SearchH
         value={query}
         onChange={(e) => onQueryChange(e.target.value)}
       />
-      <button className="locate-btn" onClick={onLocate}>
-        현재 위치
+      <button className="locate-btn" onClick={onLocate} disabled={locating}>
+        {locating ? "위치 확인 중…" : "현재 위치"}
       </button>
     </div>
   );

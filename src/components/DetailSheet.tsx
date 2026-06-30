@@ -2,6 +2,7 @@
 
 import type { Place } from "@/lib/types";
 import { kakaoMapLink, naverMapLink } from "@/lib/deeplinks";
+import AdSlot from "./AdSlot";
 
 const CATEGORY_LABEL: Record<Place["category"], string> = {
   shelter: "무더위쉼터",
@@ -46,6 +47,8 @@ export default function DetailSheet({ place, onClose }: DetailSheetProps) {
           네이버지도 길찾기
         </a>
       </div>
+      {/* AdSense 슬롯 ID 발급 후 slotId prop을 채우면 노출됨 */}
+      <AdSlot className="detail-sheet-ad" />
     </div>
   );
 }
