@@ -4,7 +4,12 @@ on:
   schedule:
     # 매주 월요일 04:00 UTC (KST 13:00)
     - cron: "0 4 * * 1"
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      debug:
+        description: "DEBUG=1로 실행해 원본 응답 구조를 로그에 출력"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -20,6 +25,7 @@ jobs:
       - run: node scripts/fetch-shelters.mjs
         env:
           SAFEMAP_API_KEY: ${{ secrets.SAFEMAP_API_KEY }}
+          DEBUG: ${{ inputs.debug && '1' || '' }}
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"

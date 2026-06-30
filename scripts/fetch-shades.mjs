@@ -40,6 +40,24 @@ function extractGu(address) {
   return match ?? null;
 }
 
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+// safetydata.go.kr가 간헐적으로 연결 타임아웃/일시 오류를 일으키는 경우가 있어
+// 재시도를 둔다.
+async function fetchWithRetry(url, retries = 3, delayMs = 2000) {
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    try {
+      return await fetch(url, { signal: AbortSignal.timeout(15000) });
+    } catch (err) {
+      if (attempt === retries) throw err;
+      console.error(`요청 실패(시도 ${attempt}/${retries}), ${delayMs}ms 후 재시도:`, err.message);
+      await sleep(delayMs);
+    }
+  }
+}
+
 async function fetchPage(pageNo) {
   const url = new URL(BASE_URL);
   url.searchParams.set("serviceKey", API_KEY);
@@ -47,7 +65,7 @@ async function fetchPage(pageNo) {
   url.searchParams.set("pageNo", String(pageNo));
   url.searchParams.set("numOfRows", String(PAGE_SIZE));
 
-  const res = await fetch(url);
+  const res = await fetchWithRetry(url);
   if (!res.ok) throw new Error(`safetydata API HTTP ${res.status}`);
   const json = await res.json();
   // safetydata.go.kr V2 응답 포맷: { header: {...}, body: [...] } 형태가 일반적이나
