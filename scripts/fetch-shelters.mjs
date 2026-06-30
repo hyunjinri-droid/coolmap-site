@@ -92,6 +92,8 @@ async function fetchPage(pageIndex) {
   if (!res) throw lastErr;
   if (!res.ok) throw new Error(`safemap API HTTP ${res.status}`);
   const json = await res.json();
+  if (DEBUG) console.log("원본 JSON 최상위 키:", JSON.stringify(Object.keys(json ?? {})));
+  if (DEBUG) console.log("원본 JSON (앞 500자):", JSON.stringify(json).slice(0, 500));
   // safemap 응답 포맷: { result: { totalCount, item: [...] } } 형태가 일반적이나
   // 변형 가능성이 있어 여러 경로를 시도한다.
   const items =
