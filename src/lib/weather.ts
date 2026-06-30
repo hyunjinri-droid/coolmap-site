@@ -12,6 +12,7 @@ interface WeatherItem {
   reh: number;
   feelsLikeC: number;
   heatWaveAlert: boolean;
+  heatWaveSource?: "official" | "estimated";
   recommendation: string;
 }
 

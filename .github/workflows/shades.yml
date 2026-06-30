@@ -1,0 +1,33 @@
+name: Update shade facility data
+
+on:
+  schedule:
+    # 매주 월요일 04:10 UTC (KST 13:10)
+    - cron: "10 4 * * 1"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-shades:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/fetch-shades.mjs
+        env:
+          SAFETYDATA_API_KEY: ${{ secrets.SAFETYDATA_API_KEY }}
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet -- src/data/shades.json; then
+            git add src/data/shades.json
+            git commit -m "chore: 폭염저감시설(그늘막) 데이터 갱신"
+            git push
+          else
+            echo "변경 없음"
+          fi
