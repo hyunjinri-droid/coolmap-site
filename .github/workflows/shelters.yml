@@ -24,8 +24,7 @@ jobs:
           node-version: 20
       - run: node scripts/fetch-shelters.mjs
         env:
-          SAFEMAP_API_KEY: ${{ secrets.SAFEMAP_API_KEY }}
-          SAFEMAP_PROXY_URL: ${{ secrets.SAFEMAP_PROXY_URL }}
+          SHELTERS_API_KEY: ${{ secrets.SHELTERS_API_KEY }}
           DEBUG: ${{ inputs.debug && '1' || '' }}
       - name: Commit if changed
         run: |
