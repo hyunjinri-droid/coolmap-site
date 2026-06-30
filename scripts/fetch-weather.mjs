@@ -1,12 +1,15 @@
 #!/usr/bin/env node
-// 기상청 단기예보(getVilageFcst) 데이터를 받아 구별 체감온도/폭염 여부를
-// src/data/weather.json 정적 파일로 빌드한다. GitHub Actions에서 주기 실행.
+// 기상청 단기예보(getVilageFcst)+기상특보(getWthrWrnList) 데이터를 받아
+// 구별 체감온도/폭염 여부를 src/data/weather.json 정적 파일로 빌드한다.
+// GitHub Actions에서 주기 실행.
 //
-// 필요 환경변수: KMA_API_KEY (공공데이터포털 단기예보 API 인증키, decoding 키 사용)
+// 필요 환경변수: KMA_API_KEY (공공데이터포털 단기예보/기상특보 공용 인증키, decoding 키 사용)
 //
-// 주의: 실제 "체감온도"는 기상청 별도 모델이 필요하므로, 여기서는 기온(TMP)과
-// 습도(REH)를 이용한 단순화된 체감온도(Heat Index) 근사치를 사용한다.
-// 정밀한 값이 필요하면 추후 기상청 생활기상지수(체감온도) API로 교체할 것.
+// 주의:
+// - "체감온도"는 기상청 별도 모델이 필요하므로, 기온(TMP)+습도(REH) 기반
+//   단순화된 Heat Index 근사치를 사용한다.
+// - "폭염특보"는 기상특보 API가 정상 응답하면 실제 발표 여부를 쓰고,
+//   특보 API 호출이 실패하면 체감온도 33도 임계값 추정으로 대체한다.
 
 import { readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
@@ -59,6 +62,8 @@ function latLngToGrid(lat, lng) {
 const API_KEY = process.env.KMA_API_KEY;
 const BASE_URL =
   "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst";
+const WARN_URL = "https://apis.data.go.kr/1360000/WthrWrnInfoService/getWthrWrnList";
+const DEBUG = process.env.DEBUG === "1";
 
 function pad(n) {
   return String(n).padStart(2, "0");
@@ -128,6 +133,41 @@ function pickNearestForecast(items, category) {
   return matches[0];
 }
 
+// 기상특보(WthrWrnInfoService) 응답 스키마가 서비스별로 들쭉날쭉할 수 있어,
+// 정확한 필드를 파싱하기보다 item 전체를 문자열로 합쳐 "폭염"/"서울" 포함 여부로
+// 판단하는 방어적 방식을 사용한다. (서울 전역 단위로 발표되는 특보 특성상 충분)
+async function fetchSeoulHeatWaveWarning() {
+  const url = new URL(WARN_URL);
+  url.searchParams.set("serviceKey", API_KEY);
+  url.searchParams.set("pageNo", "1");
+  url.searchParams.set("numOfRows", "100");
+  url.searchParams.set("dataType", "JSON");
+
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`기상특보 API HTTP ${res.status}`);
+  const json = await res.json();
+  const items = json?.response?.body?.items?.item ?? [];
+  const list = Array.isArray(items) ? items : [items].filter(Boolean);
+
+  if (DEBUG && list.length > 0) {
+    console.log("기상특보 샘플 item:", JSON.stringify(list[0], null, 2));
+  }
+
+  let active = false;
+  let level = null; // "주의보" | "경보"
+
+  for (const item of list) {
+    const blob = Object.values(item).join(" ");
+    if (blob.includes("폭염") && blob.includes("서울")) {
+      active = true;
+      if (blob.includes("경보")) level = "경보";
+      else if (blob.includes("주의보") && level !== "경보") level = "주의보";
+    }
+  }
+
+  return { active, level, raw: list.length };
+}
+
 async function main() {
   if (!API_KEY) {
     console.error("KMA_API_KEY 환경변수가 없어 weather.json 빌드를 건너뜁니다.");
@@ -136,6 +176,13 @@ async function main() {
 
   const { base_date, base_time } = latestBaseDateTime(new Date());
   const results = [];
+
+  let officialWarning = null;
+  try {
+    officialWarning = await fetchSeoulHeatWaveWarning();
+  } catch (err) {
+    console.error("기상특보 조회 실패, 체감온도 기반 추정으로 대체:", err.message);
+  }
 
   for (const center of guCenters) {
     const { nx, ny } = latLngToGrid(center.lat, center.lng);
@@ -150,9 +197,12 @@ async function main() {
       }
 
       const feelsLikeC = heatIndexC(tmp, reh);
-      const heatWaveAlert = feelsLikeC >= 33;
+      // 공식 기상특보가 있으면 그 값을 우선하고, 없으면 체감온도 임계값으로 추정한다.
+      const heatWaveAlert = officialWarning ? officialWarning.active : feelsLikeC >= 33;
       const recommendation = heatWaveAlert
-        ? "오전 9시 이전, 오후 6시 이후 외출을 추천해요"
+        ? officialWarning?.level === "경보"
+          ? "폭염경보! 가급적 실내에 머무르고 외출을 자제하세요"
+          : "오전 9시 이전, 오후 6시 이후 외출을 추천해요"
         : pty > 0
         ? "비/눈 소식이 있어요. 우산을 챙기세요"
         : "외출하기 좋은 날씨예요";
@@ -163,6 +213,7 @@ async function main() {
         reh,
         feelsLikeC,
         heatWaveAlert,
+        heatWaveSource: officialWarning ? "official" : "estimated",
         recommendation,
       });
     } catch (err) {
