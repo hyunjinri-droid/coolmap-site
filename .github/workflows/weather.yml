@@ -1,0 +1,33 @@
+name: Update weather data
+
+on:
+  schedule:
+    # 매일 3시간마다 (KMA 발표 주기에 맞춰 여유있게)
+    - cron: "20 */3 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-weather:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/fetch-weather.mjs
+        env:
+          KMA_API_KEY: ${{ secrets.KMA_API_KEY }}
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet -- src/data/weather.json; then
+            git add src/data/weather.json
+            git commit -m "chore: 기상 데이터 갱신"
+            git push
+          else
+            echo "변경 없음"
+          fi

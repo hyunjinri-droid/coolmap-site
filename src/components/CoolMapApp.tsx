@@ -8,7 +8,7 @@ import DetailSheet from "./DetailSheet";
 import SearchHeader from "./SearchHeader";
 import placesData from "@/data/places.json";
 import type { Place } from "@/lib/types";
-import { getDummyWeatherStatus } from "@/lib/weather";
+import { getWeatherStatus } from "@/lib/weather";
 
 const ALL_PLACES = placesData as Place[];
 const SEOUL_CENTER: [number, number] = [37.5665, 126.978];
@@ -19,7 +19,7 @@ export default function CoolMapApp({ gu }: { gu?: string }) {
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState<Place | null>(null);
   const [userPosition, setUserPosition] = useState<[number, number] | null>(null);
-  const weather = useMemo(() => getDummyWeatherStatus(), []);
+  const weather = useMemo(() => getWeatherStatus(gu), [gu]);
 
   const places = useMemo(() => {
     return ALL_PLACES.filter((p) => {

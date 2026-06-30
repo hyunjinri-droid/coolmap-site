@@ -10,13 +10,32 @@
 - 폭염특보/체감온도 상태 배지는 더미 값 (`src/lib/weather.ts`)
 - 구별 페이지: `/gu/[구이름]/`
 
+- 기상청 격자좌표 변환(`src/lib/kmaGrid.ts`) + `getVilageFcst` 연동 빌드 스크립트(`scripts/fetch-weather.mjs`)
+  - 구별 체감온도는 기온+습도 기반 Heat Index 근사치(정밀 체감온도 API로 추후 교체 가능)
+  - `KMA_API_KEY` 환경변수 없으면 자동으로 더미 데이터 폴백
+- Cloudflare Pages 배포 설정(`wrangler.toml`, `.github/workflows/deploy.yml`)
+
+## 배포/자동화에 필요한 시크릿 (Cloudflare 계정 보유자가 등록)
+
+GitHub 저장소 Settings → Secrets and variables → Actions 에 등록:
+
+| 시크릿 | 용도 |
+|---|---|
+| `KMA_API_KEY` | 공공데이터포털 기상청 단기예보 API 인증키. 없으면 `weather.yml`이 건너뜀 |
+| `CLOUDFLARE_API_TOKEN` | Cloudflare Pages 배포 권한 토큰 |
+| `CLOUDFLARE_ACCOUNT_ID` | Cloudflare 계정 ID |
+
+Cloudflare 대시보드에서 `coolmap-site` Pages 프로젝트를 미리 생성하고
+`cool.babyfairschedule.co.kr` 커스텀 도메인을 연결해야 `deploy.yml`이 정상 동작합니다.
+
+- `.github/workflows/weather.yml`: 3시간마다 기상 데이터 갱신 후 커밋
+- `.github/workflows/deploy.yml`: `main` 브랜치 push 시 Cloudflare Pages 배포
+
 ## 다음 단계 (설계문서 8장 참고)
 
-1. 공공데이터포털/서울 열린데이터광장 실데이터 연동
-2. 기상청 단기예보 API + 위경도→격자좌표 변환
-3. GitHub Actions 데이터 빌드 자동화
-4. Cloudflare Pages `cool.babyfairschedule.co.kr` 배포 연결
-5. AdSense/Google Ads 캠페인 확장
+1. 공공데이터포털/서울 열린데이터광장 실데이터(쉼터/그늘막/수변공간) 연동 스크립트 작성
+2. 위 시크릿 등록 후 실제 Cloudflare Pages 배포 연결 확인
+3. AdSense/Google Ads 캠페인 확장
 
 ## 개발
 
