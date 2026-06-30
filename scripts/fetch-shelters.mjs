@@ -48,12 +48,15 @@ function sleep(ms) {
 }
 
 // safemap.go.kr가 간헐적으로 연결 타임아웃을 일으키는 경우가 있어 재시도를 둔다.
-async function fetchWithRetry(url, retries = 3, delayMs = 2000) {
+// (단순 3회/2초 고정 지연으로는 부족함이 확인되어 시도 횟수와 타임아웃을 늘리고
+// 지수 백오프를 적용한다.)
+async function fetchWithRetry(url, retries = 5, baseDelayMs = 3000) {
   for (let attempt = 1; attempt <= retries; attempt++) {
     try {
-      return await fetch(url, { signal: AbortSignal.timeout(15000) });
+      return await fetch(url, { signal: AbortSignal.timeout(20000) });
     } catch (err) {
       if (attempt === retries) throw err;
+      const delayMs = baseDelayMs * 2 ** (attempt - 1);
       console.error(`요청 실패(시도 ${attempt}/${retries}), ${delayMs}ms 후 재시도:`, err.message);
       await sleep(delayMs);
     }

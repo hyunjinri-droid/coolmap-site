@@ -46,12 +46,13 @@ function sleep(ms) {
 
 // safetydata.go.kr가 간헐적으로 연결 타임아웃/일시 오류를 일으키는 경우가 있어
 // 재시도를 둔다.
-async function fetchWithRetry(url, retries = 3, delayMs = 2000) {
+async function fetchWithRetry(url, retries = 5, baseDelayMs = 3000) {
   for (let attempt = 1; attempt <= retries; attempt++) {
     try {
-      return await fetch(url, { signal: AbortSignal.timeout(15000) });
+      return await fetch(url, { signal: AbortSignal.timeout(20000) });
     } catch (err) {
       if (attempt === retries) throw err;
+      const delayMs = baseDelayMs * 2 ** (attempt - 1);
       console.error(`요청 실패(시도 ${attempt}/${retries}), ${delayMs}ms 후 재시도:`, err.message);
       await sleep(delayMs);
     }
@@ -75,12 +76,14 @@ async function fetchPage(pageNo) {
 }
 
 function toPlace(raw, index) {
-  const name = pick(raw, ["FCLT_NM", "FCLTY_NM", "INSTL_PLC_NM", "fcltNm"]);
-  const roadAddr = pick(raw, ["RDNMADR", "RD_NM_ADDR", "ROAD_NM_ADRES"]);
+  const roadAddr = pick(raw, ["RDNMADR", "RD_NM_ADDR", "ROAD_NM_ADRES", "ADDR"]);
   const lotAddr = pick(raw, ["LOTNO_ADDR", "LOTNO_ADRES"]);
   const address = roadAddr || lotAddr;
   const lat = Number(pick(raw, ["LAT", "LA", "lat"]));
   const lng = Number(pick(raw, ["LOT", "LO", "LON", "lng"]));
+  // safetydata 그늘막 데이터셋에는 별도 시설명 필드가 없어 주소 기반으로 생성한다.
+  const name = pick(raw, ["FCLT_NM", "FCLTY_NM", "INSTL_PLC_NM", "fcltNm"]) ||
+    (address ? `그늘막 (${address})` : undefined);
 
   if (!name || !address || Number.isNaN(lat) || Number.isNaN(lng)) return null;
 
