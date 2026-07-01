@@ -1,11 +1,13 @@
 #!/usr/bin/env node
-// 공공데이터포털(data.go.kr) 지역별 무더위쉼터 API를 받아
+// 서울시 열린데이터광장 무더위쉼터 API를 받아
 // src/data/shelters.json (Place[] 스키마)으로 빌드한다.
 //
-// 필요 환경변수: SHELTERS_API_KEY (공공데이터포털 일반 인증키)
+// 필요 환경변수: SHELTERS_API_KEY (서울시 오픈API 인증키)
+//   발급: https://data.seoul.go.kr → 회원가입 → 인증키 신청
 //
-// 주의: XML 응답이므로 node:stream/web 기반 간이 파싱을 사용한다.
-// 처음 실행 시 DEBUG=1 로 실행해서 원본 item 구조를 확인할 것.
+// API: 서울시 무더위 쉼터 위치정보 (열린데이터광장)
+//   https://data.seoul.go.kr/dataList/OA-2221/S/1/datasetView.do
+//   엔드포인트: http://openapi.seoul.go.kr:8088/{KEY}/json/CoolShelter/1/1000/
 
 import { writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
@@ -15,7 +17,6 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const API_KEY = process.env.SHELTERS_API_KEY;
 const DEBUG = process.env.DEBUG === "1";
 
-const BASE_URL = "https://apis.data.go.kr/1741000/HealthSheltersForEachRegion";
 const PAGE_SIZE = 1000;
 
 const SEOUL_GU = [
@@ -37,34 +38,6 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-// XML 태그값 추출 (간이 파서, 중첩 없는 단순 태그에 사용)
-function xmlTag(xml, tag) {
-  const m = xml.match(new RegExp(`<${tag}[^>]*>([\\s\\S]*?)<\\/${tag}>`, "i"));
-  return m ? m[1].trim() : undefined;
-}
-
-// <item>...</item> 블록 배열 추출
-function xmlItems(xml) {
-  const items = [];
-  const re = /<item>([\s\S]*?)<\/item>/gi;
-  let m;
-  while ((m = re.exec(xml)) !== null) {
-    items.push(m[1]);
-  }
-  return items;
-}
-
-// <item> 블록에서 태그→값 맵 생성
-function parseItem(block) {
-  const obj = {};
-  const re = /<([A-Za-z0-9_]+)[^>]*>([\s\S]*?)<\/\1>/g;
-  let m;
-  while ((m = re.exec(block)) !== null) {
-    obj[m[1]] = m[2].trim();
-  }
-  return obj;
-}
-
 async function fetchWithRetry(url, retries = 5, baseDelayMs = 3000) {
   for (let attempt = 1; attempt <= retries; attempt++) {
     try {
@@ -78,49 +51,45 @@ async function fetchWithRetry(url, retries = 5, baseDelayMs = 3000) {
   }
 }
 
-async function fetchPage(pageNo) {
-  const url = new URL(BASE_URL);
-  url.searchParams.set("serviceKey", API_KEY);
-  url.searchParams.set("pageNo", String(pageNo));
-  url.searchParams.set("numOfRows", String(PAGE_SIZE));
-  url.searchParams.set("siDoCd", "11"); // 서울특별시
+async function fetchPage(start, end) {
+  // 서울시 오픈API 형식: /KEY/json/CoolShelter/시작/끝/
+  const url = `http://openapi.seoul.go.kr:8088/${API_KEY}/json/CoolShelter/${start}/${end}/`;
+  if (DEBUG) console.log("요청 URL:", url.replace(API_KEY, "***"));
 
-  if (DEBUG) console.log("요청 URL:", url.toString().replace(API_KEY, "***"));
   const res = await fetchWithRetry(url);
-  const xml = await res.text();
+  const text = await res.text();
+
   if (!res.ok) {
-    console.error(`data.go.kr API HTTP ${res.status}, 응답 본문:\n`, xml.slice(0, 2000));
-    throw new Error(`data.go.kr API HTTP ${res.status}`);
+    console.error(`서울시 API HTTP ${res.status}, 응답:\n`, text.slice(0, 1000));
+    throw new Error(`서울시 API HTTP ${res.status}`);
   }
 
-  if (DEBUG && pageNo === 1) {
-    console.log("원본 XML (앞 2000자):\n", xml.slice(0, 2000));
+  if (DEBUG && start === 1) console.log("원본 응답 (앞 2000자):\n", text.slice(0, 2000));
+
+  const json = JSON.parse(text);
+  // 서울시 오픈API 응답 구조: { CoolShelter: { list_total_count, RESULT, row: [...] } }
+  const data = json?.CoolShelter ?? json?.RESULT ?? json;
+  const totalCount = Number(data?.list_total_count ?? 0);
+  const rows = Array.isArray(data?.row) ? data.row : [];
+
+  if (DEBUG && start === 1 && rows.length > 0) {
+    console.log("샘플 row:", JSON.stringify(rows[0], null, 2));
   }
 
-  const totalCountStr = xmlTag(xml, "totalCount");
-  const totalCount = totalCountStr ? Number(totalCountStr) : undefined;
-  const items = xmlItems(xml).map(parseItem);
-
-  if (DEBUG && pageNo === 1 && items.length > 0) {
-    console.log("샘플 원본 item:", JSON.stringify(items[0], null, 2));
-  }
-
-  return { items, totalCount };
+  return { rows, totalCount };
 }
 
 function toPlace(raw, index) {
-  if (DEBUG) console.log("raw item:", JSON.stringify(raw));
-
-  const name =
-    raw.shelterName ?? raw.fcltNm ?? raw.FCLTY_NM ?? raw.name;
-  const address =
-    raw.streetAddress ?? raw.roadNmAddr ?? raw.address ?? raw.addr ?? raw.ADDR;
-  const lat = Number(raw.latitude ?? raw.lat ?? raw.LA);
-  const lng = Number(raw.longitude ?? raw.lng ?? raw.LO ?? raw.LOT);
-  const fcltyTy = raw.shelterType ?? raw.facilityType ?? raw.typeNm ?? "";
-  const hours = raw.operationPeriod ?? raw.useAt ?? raw.operTime;
+  // 서울시 CoolShelter 필드명 (DEBUG로 확인 후 조정)
+  const name = raw.FACLT_NM ?? raw.FCLTY_NM ?? raw.SHELTER_NM ?? raw.NAME;
+  const address = raw.RDNMADR ?? raw.ROAD_NM_ADRES ?? raw.ADRES ?? raw.ADDRESS;
+  const lat = Number(raw.LAT ?? raw.LATITUDE ?? raw.Y_COORD ?? raw.WGS84_LAT);
+  const lng = Number(raw.LOT ?? raw.LNG ?? raw.LONGITUDE ?? raw.X_COORD ?? raw.WGS84_LOT);
+  const fcltyTy = raw.FCLTY_TY ?? raw.TYPE_NM ?? raw.SHELTER_TY ?? "";
+  const hours = raw.OPER_TM ?? raw.OPER_TIME ?? raw.OPEN_TIME;
 
   if (!name || !address || Number.isNaN(lat) || Number.isNaN(lng) || lat === 0 || lng === 0) {
+    if (DEBUG) console.log("변환 실패 row:", JSON.stringify(raw));
     return null;
   }
 
@@ -130,7 +99,7 @@ function toPlace(raw, index) {
   const familyFriendly = !SENIOR_ONLY_KEYWORDS.some((kw) => fcltyTy.includes(kw));
 
   return {
-    id: `shelter-datagokr-${index}`,
+    id: `shelter-seoul-${index}`,
     name,
     category: "shelter",
     gu,
@@ -150,23 +119,24 @@ async function main() {
   }
 
   const places = [];
-  let pageNo = 1;
+  let start = 1;
   let totalCount = Infinity;
 
-  while (places.length < totalCount && pageNo < 100) {
-    const { items, totalCount: tc } = await fetchPage(pageNo);
-    if (tc !== undefined) totalCount = tc;
-    if (items.length === 0) break;
+  while (start <= totalCount && start < 100 * PAGE_SIZE) {
+    const end = start + PAGE_SIZE - 1;
+    const { rows, totalCount: tc } = await fetchPage(start, end);
+    if (tc > 0) totalCount = tc;
+    if (rows.length === 0) break;
 
-    items.forEach((raw, i) => {
-      const place = toPlace(raw, `${pageNo}-${i}`);
+    rows.forEach((raw, i) => {
+      const place = toPlace(raw, `${start}-${i}`);
       if (place) places.push(place);
     });
 
-    console.log(`페이지 ${pageNo}: ${items.length}건 수신, 서울 누적 ${places.length}곳`);
+    console.log(`${start}~${end}: ${rows.length}건 수신, 서울 누적 ${places.length}곳`);
 
-    if (items.length < PAGE_SIZE) break;
-    pageNo += 1;
+    if (rows.length < PAGE_SIZE) break;
+    start += PAGE_SIZE;
   }
 
   await writeFile(
