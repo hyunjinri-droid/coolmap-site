@@ -1,13 +1,9 @@
 #!/usr/bin/env node
-// 서울시 열린데이터광장 무더위쉼터 API를 받아
+// 생활안전지도(safemap.go.kr) openapi2 무더위쉼터 API를 받아
 // src/data/shelters.json (Place[] 스키마)으로 빌드한다.
 //
-// 필요 환경변수: SHELTERS_API_KEY (서울시 오픈API 인증키)
-//   발급: https://data.seoul.go.kr → 회원가입 → 인증키 신청
-//
-// API: 서울시 무더위 쉼터 위치정보 (열린데이터광장)
-//   https://data.seoul.go.kr/dataList/OA-2221/S/1/datasetView.do
-//   엔드포인트: http://openapi.seoul.go.kr:8088/{KEY}/json/CoolShelter/1/1000/
+// 필요 환경변수: SHELTERS_API_KEY (safemap.go.kr openapi2 인증키)
+// 선택 환경변수: SAFEMAP_PROXY_URL (GitHub Actions Azure IP 차단 우회용 CF Worker URL)
 
 import { writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
@@ -16,6 +12,16 @@ import path from "node:path";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const API_KEY = process.env.SHELTERS_API_KEY;
 const DEBUG = process.env.DEBUG === "1";
+const PROXY_URL = process.env.SAFEMAP_PROXY_URL;
+
+// safemap.go.kr openapi2 엔드포인트
+const API_PATH = "/openapi2/IF_0001";
+const BASE_URLS = PROXY_URL
+  ? [`${PROXY_URL.replace(/\/$/, "")}${API_PATH}`]
+  : [
+      `https://safemap.go.kr${API_PATH}`,
+      `http://safemap.go.kr${API_PATH}`,
+    ];
 
 const PAGE_SIZE = 1000;
 
@@ -27,6 +33,13 @@ const SEOUL_GU = [
 ];
 
 const SENIOR_ONLY_KEYWORDS = ["경로당", "노인정", "노인복지", "노인회관"];
+
+function pick(obj, keys) {
+  for (const k of keys) {
+    if (obj[k] !== undefined && obj[k] !== null && obj[k] !== "") return obj[k];
+  }
+  return undefined;
+}
 
 function extractGu(address) {
   if (!address) return null;
@@ -51,45 +64,67 @@ async function fetchWithRetry(url, retries = 5, baseDelayMs = 3000) {
   }
 }
 
-async function fetchPage(start, end) {
-  // 서울시 오픈API 형식: /KEY/json/CoolShelter/시작/끝/
-  const url = `http://openapi.seoul.go.kr:8088/${API_KEY}/json/CoolShelter/${start}/${end}/`;
-  if (DEBUG) console.log("요청 URL:", url.replace(API_KEY, "***"));
+async function fetchPage(pageNo) {
+  let res, text, lastErr;
 
-  const res = await fetchWithRetry(url);
-  const text = await res.text();
+  for (const baseUrl of BASE_URLS) {
+    const url = new URL(baseUrl);
+    url.searchParams.set("serviceKey", API_KEY);
+    url.searchParams.set("numOfRows", String(PAGE_SIZE));
+    url.searchParams.set("pageNo", String(pageNo));
+    url.searchParams.set("returnType", "json");
+
+    if (DEBUG) console.log("요청 URL:", url.toString().replace(API_KEY, "***"));
+
+    try {
+      res = await fetchWithRetry(url);
+      text = await res.text();
+      break;
+    } catch (err) {
+      lastErr = err;
+      console.error(`${baseUrl} 연결 실패:`, err.message);
+    }
+  }
+
+  if (!res) throw lastErr;
 
   if (!res.ok) {
-    console.error(`서울시 API HTTP ${res.status}, 응답:\n`, text.slice(0, 1000));
-    throw new Error(`서울시 API HTTP ${res.status}`);
+    console.error(`safemap API HTTP ${res.status}, 응답:\n`, text?.slice(0, 2000));
+    throw new Error(`safemap API HTTP ${res.status}`);
   }
 
-  if (DEBUG && start === 1) console.log("원본 응답 (앞 2000자):\n", text.slice(0, 2000));
+  if (DEBUG && pageNo === 1) console.log("원본 응답 (앞 3000자):\n", text.slice(0, 3000));
 
   const json = JSON.parse(text);
-  // 서울시 오픈API 응답 구조: { CoolShelter: { list_total_count, RESULT, row: [...] } }
-  const data = json?.CoolShelter ?? json?.RESULT ?? json;
-  const totalCount = Number(data?.list_total_count ?? 0);
-  const rows = Array.isArray(data?.row) ? data.row : [];
+  // 응답 구조 탐색 (DEBUG=1 로 확인 후 고정)
+  const body = json?.body ?? json?.response?.body ?? json?.result ?? json;
+  const totalCount = Number(body?.totalCount ?? json?.totalCount ?? 0);
+  const items = body?.items?.item ?? body?.item ?? body?.items ?? body?.rows ?? [];
 
-  if (DEBUG && start === 1 && rows.length > 0) {
-    console.log("샘플 row:", JSON.stringify(rows[0], null, 2));
+  if (DEBUG && pageNo === 1) {
+    console.log("최상위 키:", Object.keys(json ?? {}));
+    console.log("totalCount:", totalCount);
+    console.log("샘플 item:", JSON.stringify(Array.isArray(items) ? items[0] : items, null, 2));
   }
 
-  return { rows, totalCount };
+  return {
+    items: Array.isArray(items) ? items : items ? [items] : [],
+    totalCount,
+  };
 }
 
 function toPlace(raw, index) {
-  // 서울시 CoolShelter 필드명 (DEBUG로 확인 후 조정)
-  const name = raw.FACLT_NM ?? raw.FCLTY_NM ?? raw.SHELTER_NM ?? raw.NAME;
-  const address = raw.RDNMADR ?? raw.ROAD_NM_ADRES ?? raw.ADRES ?? raw.ADDRESS;
-  const lat = Number(raw.LAT ?? raw.LATITUDE ?? raw.Y_COORD ?? raw.WGS84_LAT);
-  const lng = Number(raw.LOT ?? raw.LNG ?? raw.LONGITUDE ?? raw.X_COORD ?? raw.WGS84_LOT);
-  const fcltyTy = raw.FCLTY_TY ?? raw.TYPE_NM ?? raw.SHELTER_TY ?? "";
-  const hours = raw.OPER_TM ?? raw.OPER_TIME ?? raw.OPEN_TIME;
+  const name = pick(raw, ["FCLTY_NM", "fcltyNm", "shelterName", "name", "NAME"]);
+  const roadAddr = pick(raw, ["RN_ADRES", "ROAD_NM_ADRES", "rnAdres", "roadAddr"]);
+  const lotAddr = pick(raw, ["LOTNO_ADRES", "lotnoAdres", "jibunAddr"]);
+  const address = roadAddr || lotAddr;
+  const lat = Number(pick(raw, ["LA", "la", "lat", "LAT", "latitude"]));
+  const lng = Number(pick(raw, ["LO", "lo", "lng", "LOT", "LON", "longitude"]));
+  const fcltyTy = pick(raw, ["FCLTY_TY", "HOT_PLACE_TY_NM", "fcltyTy", "shelterType"]) ?? "";
+  const hours = pick(raw, ["USE_AT", "OPER_TIME", "useAt", "operTime"]);
 
   if (!name || !address || Number.isNaN(lat) || Number.isNaN(lng) || lat === 0 || lng === 0) {
-    if (DEBUG) console.log("변환 실패 row:", JSON.stringify(raw));
+    if (DEBUG) console.log("변환 실패:", JSON.stringify(raw));
     return null;
   }
 
@@ -99,7 +134,7 @@ function toPlace(raw, index) {
   const familyFriendly = !SENIOR_ONLY_KEYWORDS.some((kw) => fcltyTy.includes(kw));
 
   return {
-    id: `shelter-seoul-${index}`,
+    id: `shelter-safemap2-${index}`,
     name,
     category: "shelter",
     gu,
@@ -119,24 +154,23 @@ async function main() {
   }
 
   const places = [];
-  let start = 1;
+  let pageNo = 1;
   let totalCount = Infinity;
 
-  while (start <= totalCount && start < 100 * PAGE_SIZE) {
-    const end = start + PAGE_SIZE - 1;
-    const { rows, totalCount: tc } = await fetchPage(start, end);
+  while (places.length < totalCount && pageNo < 100) {
+    const { items, totalCount: tc } = await fetchPage(pageNo);
     if (tc > 0) totalCount = tc;
-    if (rows.length === 0) break;
+    if (items.length === 0) break;
 
-    rows.forEach((raw, i) => {
-      const place = toPlace(raw, `${start}-${i}`);
+    items.forEach((raw, i) => {
+      const place = toPlace(raw, `${pageNo}-${i}`);
       if (place) places.push(place);
     });
 
-    console.log(`${start}~${end}: ${rows.length}건 수신, 서울 누적 ${places.length}곳`);
+    console.log(`페이지 ${pageNo}: ${items.length}건 수신, 서울 누적 ${places.length}곳`);
 
-    if (rows.length < PAGE_SIZE) break;
-    start += PAGE_SIZE;
+    if (items.length < PAGE_SIZE) break;
+    pageNo += 1;
   }
 
   await writeFile(
