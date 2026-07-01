@@ -10,6 +10,9 @@ const DESCRIPTION =
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  verification: {
+    other: { "naver-site-verification": "1d4bb8fd9f21832da642895e11f4e4c24c540afc" },
+  },
   title: {
     default: TITLE,
     template: "%s | 쿨맵",
