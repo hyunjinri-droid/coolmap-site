@@ -15,9 +15,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const API_KEY = process.env.SHELTERS_API_KEY;
 const DEBUG = process.env.DEBUG === "1";
 
-// data.go.kr API 오퍼레이션명 — 실제 엔드포인트에 맞게 조정 필요
-// 포털 상세 페이지의 "기본 정보 > 오퍼레이션 URL" 항목에서 확인
-const BASE_URL = "https://apis.data.go.kr/1741000/HealthSheltersForEachRegion/getHealthSheltersForEachRegion1";
+const BASE_URL = "https://apis.data.go.kr/1741000/HealthSheltersForEachRegion";
 const PAGE_SIZE = 1000;
 
 const SEOUL_GU = [
@@ -85,11 +83,13 @@ async function fetchPage(pageNo) {
   url.searchParams.set("serviceKey", API_KEY);
   url.searchParams.set("pageNo", String(pageNo));
   url.searchParams.set("numOfRows", String(PAGE_SIZE));
+  url.searchParams.set("siDoCd", "11"); // 서울특별시
 
+  if (DEBUG) console.log("요청 URL:", url.toString().replace(API_KEY, "***"));
   const res = await fetchWithRetry(url);
   const xml = await res.text();
   if (!res.ok) {
-    console.error(`data.go.kr API HTTP ${res.status}, 응답 본문:\n`, xml.slice(0, 1000));
+    console.error(`data.go.kr API HTTP ${res.status}, 응답 본문:\n`, xml.slice(0, 2000));
     throw new Error(`data.go.kr API HTTP ${res.status}`);
   }
 
