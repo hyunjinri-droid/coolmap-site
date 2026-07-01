@@ -20,11 +20,24 @@ const DEBUG = process.env.DEBUG === "1";
 const BASE_URL = "https://www.safetydata.go.kr/V2/api/DSSP-IF-10926";
 const PAGE_SIZE = 1000;
 
-const SEOUL_GU = [
-  "종로구", "중구", "용산구", "성동구", "광진구", "동대문구", "중랑구",
-  "성북구", "강북구", "도봉구", "노원구", "은평구", "서대문구", "마포구",
-  "양천구", "강서구", "구로구", "금천구", "영등포구", "동작구", "관악구",
-  "서초구", "강남구", "송파구", "강동구",
+const CITY_MAP = [
+  { pattern: /서울/, city: "서울" },
+  { pattern: /부산/, city: "부산" },
+  { pattern: /대구/, city: "대구" },
+  { pattern: /인천/, city: "인천" },
+  { pattern: /광주/, city: "광주" },
+  { pattern: /대전/, city: "대전" },
+  { pattern: /울산/, city: "울산" },
+  { pattern: /세종/, city: "세종" },
+  { pattern: /경기/, city: "경기" },
+  { pattern: /강원/, city: "강원" },
+  { pattern: /충북|충청북도/, city: "충북" },
+  { pattern: /충남|충청남도/, city: "충남" },
+  { pattern: /전북|전라북도/, city: "전북" },
+  { pattern: /전남|전라남도/, city: "전남" },
+  { pattern: /경북|경상북도/, city: "경북" },
+  { pattern: /경남|경상남도/, city: "경남" },
+  { pattern: /제주/, city: "제주" },
 ];
 
 function pick(obj, keys) {
@@ -34,10 +47,15 @@ function pick(obj, keys) {
   return undefined;
 }
 
-function extractGu(address) {
+function extractCityAndGu(address) {
   if (!address) return null;
-  const match = SEOUL_GU.find((gu) => address.includes(gu));
-  return match ?? null;
+  const cityEntry = CITY_MAP.find(({ pattern }) => pattern.test(address));
+  if (!cityEntry) return null;
+  const tokens = address.split(/\s+/);
+  const gu = tokens.find((t, i) => i > 0 && /[구군]$/.test(t) && t.length >= 2)
+    ?? tokens.find((t, i) => i > 0 && /시$/.test(t) && t.length >= 2 && !cityEntry.pattern.test(t))
+    ?? null;
+  return { city: cityEntry.city, gu: gu ?? cityEntry.city };
 }
 
 function sleep(ms) {
@@ -87,14 +105,15 @@ function toPlace(raw, index) {
 
   if (!name || !address || Number.isNaN(lat) || Number.isNaN(lng)) return null;
 
-  const gu = extractGu(address);
-  if (!gu) return null; // MVP 범위: 서울 25개구만
+  const region = extractCityAndGu(address);
+  if (!region) return null;
 
   return {
     id: `shade-safetydata-${index}`,
     name,
     category: "shade",
-    gu,
+    city: region.city,
+    gu: region.gu,
     address,
     lat,
     lng,
@@ -131,7 +150,7 @@ async function main() {
     path.join(__dirname, "../src/data/shades.json"),
     JSON.stringify(places, null, 2)
   );
-  console.log(`shades.json 작성 완료: 서울 ${places.length}곳`);
+  console.log(`shades.json 작성 완료: 전국 ${places.length}곳`);
 }
 
 main().catch((err) => {
