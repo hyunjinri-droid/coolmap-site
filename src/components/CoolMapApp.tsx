@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import CoolMapClient from "./CoolMapClient";
 import FilterBar, { FilterValue } from "./FilterBar";
 import StatusBadge from "./StatusBadge";
@@ -68,6 +69,8 @@ export default function CoolMapApp({ gu }: { gu?: string }) {
         onQueryChange={setQuery}
         onLocate={handleLocate}
         locating={locateState === "loading"}
+        places={ALL_PLACES}
+        onSelectPlace={(place) => { setSelected(place); setQuery(""); }}
       />
       {locateState === "denied" && (
         <div className="locate-banner">
@@ -95,9 +98,9 @@ export default function CoolMapApp({ gu }: { gu?: string }) {
           onSelect={setSelected}
           selectedPlace={selected}
         />
-        <div className="map-count-badge">
-          📌 {places.length.toLocaleString()}곳
-        </div>
+        <Link href="/stats" className="map-count-badge">
+          📌 {places.length.toLocaleString()}곳 · 구별통계 →
+        </Link>
         {places.length === 0 && (
           <div className="empty-state">
             {gu ? `${gu}에는` : "선택한 조건에는"} 아직 등록된 장소가 없어요. 다른
