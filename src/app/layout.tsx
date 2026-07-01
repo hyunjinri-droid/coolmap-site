@@ -11,6 +11,7 @@ const DESCRIPTION =
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   verification: {
+    google: "yDX0ROR88DL0J5zK8U7iQJvqbPFotC8hBxkZ0pG4L6w",
     other: { "naver-site-verification": "1d4bb8fd9f21832da642895e11f4e4c24c540afc" },
   },
   title: {
