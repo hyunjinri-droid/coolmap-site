@@ -7,6 +7,7 @@ import FilterBar, { FilterValue } from "./FilterBar";
 import StatusBadge from "./StatusBadge";
 import DetailSheet from "./DetailSheet";
 import SearchHeader from "./SearchHeader";
+import KakaoAdFit from "./KakaoAdFit";
 import type { Place } from "@/lib/types";
 import { getWeatherStatus } from "@/lib/weather";
 import { getAllPlaces } from "@/lib/places";
@@ -108,6 +109,7 @@ export default function CoolMapApp({ gu }: { gu?: string }) {
           </div>
         )}
       </div>
+      <KakaoAdFit />
       <DetailSheet
         place={selected}
         onClose={() => setSelected(null)}
