@@ -25,11 +25,25 @@ const BASE_URLS = PROXY_URL
 
 const PAGE_SIZE = 1000;
 
-const SEOUL_GU = [
-  "종로구", "중구", "용산구", "성동구", "광진구", "동대문구", "중랑구",
-  "성북구", "강북구", "도봉구", "노원구", "은평구", "서대문구", "마포구",
-  "양천구", "강서구", "구로구", "금천구", "영등포구", "동작구", "관악구",
-  "서초구", "강남구", "송파구", "강동구",
+// 시/도 → 짧은 표시명
+const CITY_MAP = [
+  { pattern: /서울/, city: "서울" },
+  { pattern: /부산/, city: "부산" },
+  { pattern: /대구/, city: "대구" },
+  { pattern: /인천/, city: "인천" },
+  { pattern: /광주/, city: "광주" },
+  { pattern: /대전/, city: "대전" },
+  { pattern: /울산/, city: "울산" },
+  { pattern: /세종/, city: "세종" },
+  { pattern: /경기/, city: "경기" },
+  { pattern: /강원/, city: "강원" },
+  { pattern: /충북|충청북도/, city: "충북" },
+  { pattern: /충남|충청남도/, city: "충남" },
+  { pattern: /전북|전라북도/, city: "전북" },
+  { pattern: /전남|전라남도/, city: "전남" },
+  { pattern: /경북|경상북도/, city: "경북" },
+  { pattern: /경남|경상남도/, city: "경남" },
+  { pattern: /제주/, city: "제주" },
 ];
 
 const SENIOR_ONLY_KEYWORDS = ["경로당", "노인정", "노인복지", "노인회관"];
@@ -41,10 +55,18 @@ function pick(obj, keys) {
   return undefined;
 }
 
-function extractGu(address) {
+function extractCityAndGu(address) {
   if (!address) return null;
-  const match = SEOUL_GU.find((gu) => address.includes(gu));
-  return match ?? null;
+  const cityEntry = CITY_MAP.find(({ pattern }) => pattern.test(address));
+  if (!cityEntry) return null;
+
+  // 구/군/시 추출 (두 글자 이상 + 구|군|시 로 끝나는 토큰)
+  const tokens = address.split(/\s+/);
+  const gu = tokens.find((t, i) => i > 0 && /[구군]$/.test(t) && t.length >= 2)
+    ?? tokens.find((t, i) => i > 0 && /시$/.test(t) && t.length >= 2 && !cityEntry.pattern.test(t))
+    ?? null;
+
+  return { city: cityEntry.city, gu: gu ?? cityEntry.city };
 }
 
 function sleep(ms) {
@@ -145,8 +167,8 @@ function toPlace(raw, index) {
     return null;
   }
 
-  const gu = extractGu(address);
-  if (!gu) return null;
+  const region = extractCityAndGu(address);
+  if (!region) return null;
 
   const familyFriendly = !SENIOR_ONLY_KEYWORDS.some((kw) => fcltyTy.includes(kw));
 
@@ -154,7 +176,8 @@ function toPlace(raw, index) {
     id: `shelter-safemap2-${index}`,
     name,
     category: "shelter",
-    gu,
+    city: region.city,
+    gu: region.gu,
     address,
     lat,
     lng,
@@ -184,7 +207,7 @@ async function main() {
       if (place) places.push(place);
     });
 
-    console.log(`페이지 ${pageNo}: ${items.length}건 수신, 서울 누적 ${places.length}곳`);
+    console.log(`페이지 ${pageNo}: ${items.length}건 수신, 전국 누적 ${places.length}곳`);
 
     if (items.length < PAGE_SIZE) break;
     pageNo += 1;
@@ -194,7 +217,7 @@ async function main() {
     path.join(__dirname, "../src/data/shelters.json"),
     JSON.stringify(places, null, 2)
   );
-  console.log(`shelters.json 작성 완료: 서울 ${places.length}곳`);
+  console.log(`shelters.json 작성 완료: 전국 ${places.length}곳`);
 }
 
 main().catch((err) => {

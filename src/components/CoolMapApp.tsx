@@ -13,7 +13,18 @@ import { getWeatherStatus } from "@/lib/weather";
 import { getAllPlaces } from "@/lib/places";
 
 const ALL_PLACES = getAllPlaces();
+const ALL_CITIES = ["서울", "경기", "인천", "부산", "대구", "대전", "광주", "울산", "세종", "강원", "충북", "충남", "전북", "전남", "경북", "경남", "제주"];
+const KOREA_CENTER: [number, number] = [36.5, 127.5];
 const SEOUL_CENTER: [number, number] = [37.5665, 126.978];
+
+const CITY_CENTERS: Record<string, [number, number]> = {
+  서울: [37.5665, 126.978], 경기: [37.4138, 127.5183], 인천: [37.4563, 126.7052],
+  부산: [35.1796, 129.0756], 대구: [35.8714, 128.6014], 대전: [36.3504, 127.3845],
+  광주: [35.1595, 126.8526], 울산: [35.5384, 129.3114], 세종: [36.4801, 127.2890],
+  강원: [37.8228, 128.1555], 충북: [36.6357, 127.4917], 충남: [36.5184, 126.8000],
+  전북: [35.7175, 127.1530], 전남: [34.8161, 126.4629], 경북: [36.4919, 128.8889],
+  경남: [35.4606, 128.2132], 제주: [33.4890, 126.4983],
+};
 
 type LocateState = "idle" | "loading" | "denied" | "unsupported";
 
@@ -24,19 +35,21 @@ export default function CoolMapApp({ gu }: { gu?: string }) {
   const [selected, setSelected] = useState<Place | null>(null);
   const [userPosition, setUserPosition] = useState<[number, number] | null>(null);
   const [locateState, setLocateState] = useState<LocateState>("idle");
+  const [selectedCity, setSelectedCity] = useState<string>("서울");
   const weather = useMemo(() => getWeatherStatus(gu), [gu]);
 
   const places = useMemo(() => {
     return ALL_PLACES.filter((p) => {
       if (gu && p.gu !== gu) return false;
+      if (!gu && selectedCity && p.city !== selectedCity) return false;
       if (filter !== "all" && p.category !== filter) return false;
       if (familyOnly && !p.familyFriendly) return false;
-      if (query && !p.name.includes(query) && !p.gu.includes(query)) return false;
+      if (query && !p.name.includes(query) && !p.gu.includes(query) && !p.city.includes(query)) return false;
       return true;
     });
-  }, [gu, filter, familyOnly, query]);
+  }, [gu, filter, familyOnly, query, selectedCity]);
 
-  const basePlaces = useMemo(() => ALL_PLACES.filter((p) => !gu || p.gu === gu), [gu]);
+  const basePlaces = useMemo(() => ALL_PLACES.filter((p) => gu ? p.gu === gu : p.city === selectedCity), [gu, selectedCity]);
   const counts = useMemo(() => ({
     all:     basePlaces.length,
     shelter: basePlaces.filter((p) => p.category === "shelter").length,
@@ -44,7 +57,7 @@ export default function CoolMapApp({ gu }: { gu?: string }) {
     water:   basePlaces.filter((p) => p.category === "water").length,
   }), [basePlaces]);
 
-  const center = userPosition ?? SEOUL_CENTER;
+  const center = userPosition ?? (selectedCity ? (CITY_CENTERS[selectedCity] ?? KOREA_CENTER) : SEOUL_CENTER);
 
   function handleLocate() {
     if (!navigator.geolocation) {
@@ -83,6 +96,17 @@ export default function CoolMapApp({ gu }: { gu?: string }) {
         <div className="locate-banner">이 브라우저에서는 위치 확인을 지원하지 않아요.</div>
       )}
       <StatusBadge status={weather} />
+      <div className="city-bar">
+        {ALL_CITIES.map((city) => (
+          <button
+            key={city}
+            className={`city-chip${selectedCity === city ? " active" : ""}`}
+            onClick={() => setSelectedCity(city)}
+          >
+            {city}
+          </button>
+        ))}
+      </div>
       <FilterBar
         value={filter}
         onChange={setFilter}
@@ -100,7 +124,7 @@ export default function CoolMapApp({ gu }: { gu?: string }) {
           selectedPlace={selected}
         />
         <Link href="/stats" className="map-count-badge">
-          📌 {places.length.toLocaleString()}곳 · 구별통계 →
+          📌 {places.length.toLocaleString()}곳 · 지역통계 →
         </Link>
         {places.length === 0 && (
           <div className="empty-state">

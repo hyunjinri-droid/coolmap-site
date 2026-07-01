@@ -9,7 +9,8 @@
     "lng": 126.9326,
     "hours": "매년 7~8월 운영 (09:00~18:00)",
     "familyFriendly": true,
-    "note": "어린이 물놀이장, 무료입장"
+    "note": "어린이 물놀이장, 무료입장",
+    "city": "서울"
   },
   {
     "id": "water-hangang-ttukseom-pool",
@@ -17,11 +18,12 @@
     "category": "water",
     "gu": "광진구",
     "address": "서울 광진구 강변북로 139 뚝섬한강공원",
-    "lat": 37.5310,
-    "lng": 127.0670,
+    "lat": 37.531,
+    "lng": 127.067,
     "hours": "7~8월 09:00~18:00 (수영장 유료, 물놀이장 무료)",
     "familyFriendly": true,
-    "note": "야외수영장·유아풀·파도풀 운영"
+    "note": "야외수영장·유아풀·파도풀 운영",
+    "city": "서울"
   },
   {
     "id": "water-hangang-gwangnaru-pool",
@@ -33,7 +35,8 @@
     "lng": 127.1154,
     "hours": "7~8월 09:00~18:00",
     "familyFriendly": true,
-    "note": "무료 물놀이장"
+    "note": "무료 물놀이장",
+    "city": "서울"
   },
   {
     "id": "water-hangang-jamsil-pool",
@@ -45,7 +48,8 @@
     "lng": 127.0832,
     "hours": "7~8월 09:00~18:00",
     "familyFriendly": true,
-    "note": "무료 물놀이장"
+    "note": "무료 물놀이장",
+    "city": "서울"
   },
   {
     "id": "water-hangang-nanji-pool",
@@ -54,10 +58,11 @@
     "gu": "마포구",
     "address": "서울 마포구 하늘공원로 95 난지한강공원",
     "lat": 37.5694,
-    "lng": 126.8900,
+    "lng": 126.89,
     "hours": "7~8월 09:00~18:00",
     "familyFriendly": true,
-    "note": "무료 물놀이장"
+    "note": "무료 물놀이장",
+    "city": "서울"
   },
   {
     "id": "water-hangang-banpo-pool",
@@ -69,7 +74,8 @@
     "lng": 126.9991,
     "hours": "7~8월 09:00~18:00",
     "familyFriendly": true,
-    "note": "달빛무지개분수 인근"
+    "note": "달빛무지개분수 인근",
+    "city": "서울"
   },
   {
     "id": "water-hangang-ichon-pool",
@@ -78,10 +84,11 @@
     "gu": "용산구",
     "address": "서울 용산구 이촌로72길 62 이촌한강공원",
     "lat": 37.5163,
-    "lng": 126.9720,
+    "lng": 126.972,
     "hours": "7~8월 09:00~18:00",
     "familyFriendly": true,
-    "note": "무료 물놀이장"
+    "note": "무료 물놀이장",
+    "city": "서울"
   },
   {
     "id": "water-hangang-mangwon-pool",
@@ -89,11 +96,12 @@
     "category": "water",
     "gu": "마포구",
     "address": "서울 마포구 망원동 402 망원한강공원",
-    "lat": 37.5540,
+    "lat": 37.554,
     "lng": 126.9031,
     "hours": "7~8월 09:00~18:00",
     "familyFriendly": true,
-    "note": "무료 물놀이장"
+    "note": "무료 물놀이장",
+    "city": "서울"
   },
   {
     "id": "water-hangang-yanghwa-pool",
@@ -105,7 +113,8 @@
     "lng": 126.8975,
     "hours": "7~8월 09:00~18:00",
     "familyFriendly": true,
-    "note": "무료 물놀이장"
+    "note": "무료 물놀이장",
+    "city": "서울"
   },
   {
     "id": "water-banpo-rainbow",
@@ -117,7 +126,8 @@
     "lng": 126.9964,
     "hours": "화~일 12:00, 20:00, 21:00 (30분씩, 우천 시 취소)",
     "familyFriendly": true,
-    "note": "세계 최장 교량분수, 야간 조명쇼"
+    "note": "세계 최장 교량분수, 야간 조명쇼",
+    "city": "서울"
   },
   {
     "id": "water-cheonggyecheon-fountain",
@@ -129,7 +139,8 @@
     "lng": 126.9779,
     "hours": "상시 운영 (계절별 가동 시간 상이)",
     "familyFriendly": true,
-    "note": "청계천 시작점 분수"
+    "note": "청계천 시작점 분수",
+    "city": "서울"
   },
   {
     "id": "water-cheonggyecheon-stream",
@@ -141,7 +152,8 @@
     "lng": 126.9853,
     "hours": "24시간",
     "familyFriendly": true,
-    "note": "광교~오간수교 구간 물가 산책"
+    "note": "광교~오간수교 구간 물가 산책",
+    "city": "서울"
   },
   {
     "id": "water-gwanghwamun-fountain",
@@ -149,11 +161,12 @@
     "category": "water",
     "gu": "종로구",
     "address": "서울 종로구 세종대로 172 광화문광장",
-    "lat": 37.5760,
+    "lat": 37.576,
     "lng": 126.9769,
     "hours": "매시 정각·30분 (10:00~21:00, 여름철 연장)",
     "familyFriendly": true,
-    "note": "바닥분수, 어린이 물놀이 가능"
+    "note": "바닥분수, 어린이 물놀이 가능",
+    "city": "서울"
   },
   {
     "id": "water-seoul-forest-water",
@@ -165,7 +178,8 @@
     "lng": 127.0375,
     "hours": "7~8월 10:00~18:00",
     "familyFriendly": true,
-    "note": "무료 어린이 물놀이터"
+    "note": "무료 어린이 물놀이터",
+    "city": "서울"
   },
   {
     "id": "water-worldcup-park-water",
@@ -177,7 +191,8 @@
     "lng": 126.8979,
     "hours": "7~8월 운영",
     "familyFriendly": true,
-    "note": "어린이 무료 물놀이터"
+    "note": "어린이 무료 물놀이터",
+    "city": "서울"
   },
   {
     "id": "water-children-grand-park-water",
@@ -189,7 +204,8 @@
     "lng": 127.0813,
     "hours": "7~8월 10:00~17:00",
     "familyFriendly": true,
-    "note": "어린이 물놀이 시설"
+    "note": "어린이 물놀이 시설",
+    "city": "서울"
   },
   {
     "id": "water-boramae-park-water",
@@ -198,10 +214,11 @@
     "gu": "동작구",
     "address": "서울 동작구 여의대방로20길 33 보라매공원",
     "lat": 37.4917,
-    "lng": 126.9170,
+    "lng": 126.917,
     "hours": "7~8월 운영",
     "familyFriendly": true,
-    "note": "어린이 무료 물놀이터"
+    "note": "어린이 무료 물놀이터",
+    "city": "서울"
   },
   {
     "id": "water-jungnang-water",
@@ -210,10 +227,11 @@
     "gu": "중랑구",
     "address": "서울 중랑구 도당로 중랑천변",
     "lat": 37.5872,
-    "lng": 127.0830,
+    "lng": 127.083,
     "hours": "7~8월 09:00~18:00",
     "familyFriendly": true,
-    "note": "무료 물놀이터"
+    "note": "무료 물놀이터",
+    "city": "서울"
   },
   {
     "id": "water-dobong-water",
@@ -221,11 +239,12 @@
     "category": "water",
     "gu": "도봉구",
     "address": "서울 도봉구 방학동 방학천 수변",
-    "lat": 37.6540,
+    "lat": 37.654,
     "lng": 127.0275,
     "hours": "7~8월 09:00~18:00",
     "familyFriendly": true,
-    "note": "천변 무료 물놀이"
+    "note": "천변 무료 물놀이",
+    "city": "서울"
   },
   {
     "id": "water-nowon-jungnang-water",
@@ -237,7 +256,8 @@
     "lng": 127.0763,
     "hours": "7~8월 09:00~18:00",
     "familyFriendly": true,
-    "note": "무료 어린이 물놀이"
+    "note": "무료 어린이 물놀이",
+    "city": "서울"
   },
   {
     "id": "water-eunpyeong-suseong-water",
@@ -245,11 +265,12 @@
     "category": "water",
     "gu": "은평구",
     "address": "서울 은평구 진관동 수성동계곡",
-    "lat": 37.6320,
+    "lat": 37.632,
     "lng": 126.9268,
     "hours": "상시 (계절별 이용)",
     "familyFriendly": true,
-    "note": "자연계곡, 물놀이 가능"
+    "note": "자연계곡, 물놀이 가능",
+    "city": "서울"
   },
   {
     "id": "water-seodaemun-hongje-water",
@@ -261,7 +282,8 @@
     "lng": 126.9388,
     "hours": "7~8월 09:00~18:00",
     "familyFriendly": true,
-    "note": "천변 물놀이 구간"
+    "note": "천변 물놀이 구간",
+    "city": "서울"
   },
   {
     "id": "water-mapo-sungmi-fountain",
@@ -273,7 +295,8 @@
     "lng": 126.9218,
     "hours": "여름철 운영",
     "familyFriendly": true,
-    "note": "바닥분수"
+    "note": "바닥분수",
+    "city": "서울"
   },
   {
     "id": "water-yangcheon-water",
@@ -285,7 +308,8 @@
     "lng": 126.8764,
     "hours": "7~8월 운영",
     "familyFriendly": true,
-    "note": "무료 어린이 물놀이"
+    "note": "무료 어린이 물놀이",
+    "city": "서울"
   },
   {
     "id": "water-gangseo-gaehwa-water",
@@ -297,7 +321,8 @@
     "lng": 126.8132,
     "hours": "7~8월 운영",
     "familyFriendly": true,
-    "note": "무료 물놀이터"
+    "note": "무료 물놀이터",
+    "city": "서울"
   },
   {
     "id": "water-guro-water",
@@ -305,11 +330,12 @@
     "category": "water",
     "gu": "구로구",
     "address": "서울 구로구 안양천로 안양천 수변",
-    "lat": 37.4960,
+    "lat": 37.496,
     "lng": 126.8739,
     "hours": "7~8월 09:00~18:00",
     "familyFriendly": true,
-    "note": "안양천 무료 물놀이"
+    "note": "안양천 무료 물놀이",
+    "city": "서울"
   },
   {
     "id": "water-geumcheon-water",
@@ -321,7 +347,8 @@
     "lng": 126.8965,
     "hours": "7~8월 09:00~18:00",
     "familyFriendly": true,
-    "note": "안양천 물놀이 구간"
+    "note": "안양천 물놀이 구간",
+    "city": "서울"
   },
   {
     "id": "water-yeongdeungpo-water",
@@ -333,7 +360,8 @@
     "lng": 126.8726,
     "hours": "상시",
     "familyFriendly": true,
-    "note": "산책·수변 쉼터"
+    "note": "산책·수변 쉼터",
+    "city": "서울"
   },
   {
     "id": "water-dongjak-water",
@@ -342,10 +370,11 @@
     "gu": "동작구",
     "address": "서울 동작구 상도로 국사봉근린공원",
     "lat": 37.4978,
-    "lng": 126.9340,
+    "lng": 126.934,
     "hours": "7~8월 운영",
     "familyFriendly": true,
-    "note": "어린이 물놀이터"
+    "note": "어린이 물놀이터",
+    "city": "서울"
   },
   {
     "id": "water-gwanak-water",
@@ -357,7 +386,8 @@
     "lng": 126.9163,
     "hours": "7~8월 09:00~18:00",
     "familyFriendly": true,
-    "note": "도림천 물놀이 구간"
+    "note": "도림천 물놀이 구간",
+    "city": "서울"
   },
   {
     "id": "water-seocho-yangjae-water",
@@ -369,7 +399,8 @@
     "lng": 127.0442,
     "hours": "7~8월 09:00~18:00",
     "familyFriendly": true,
-    "note": "양재천 어린이 물놀이"
+    "note": "양재천 어린이 물놀이",
+    "city": "서울"
   },
   {
     "id": "water-gangnam-water",
@@ -381,7 +412,8 @@
     "lng": 127.0599,
     "hours": "7~8월 09:00~18:00",
     "familyFriendly": true,
-    "note": "양재천 물놀이 구간"
+    "note": "양재천 물놀이 구간",
+    "city": "서울"
   },
   {
     "id": "water-songpa-seongnaecheon-water",
@@ -393,7 +425,8 @@
     "lng": 127.1152,
     "hours": "7~8월 09:00~18:00",
     "familyFriendly": true,
-    "note": "성내천 어린이 물놀이"
+    "note": "성내천 어린이 물놀이",
+    "city": "서울"
   },
   {
     "id": "water-gangdong-water",
@@ -405,7 +438,8 @@
     "lng": 127.1359,
     "hours": "7~8월 운영",
     "familyFriendly": true,
-    "note": "생태 물놀이 체험"
+    "note": "생태 물놀이 체험",
+    "city": "서울"
   },
   {
     "id": "water-seongdong-water",
@@ -417,7 +451,8 @@
     "lng": 127.0567,
     "hours": "7~8월 09:00~18:00",
     "familyFriendly": true,
-    "note": "천변 무료 물놀이"
+    "note": "천변 무료 물놀이",
+    "city": "서울"
   },
   {
     "id": "water-gwangjin-achasan-water",
@@ -429,7 +464,8 @@
     "lng": 127.1007,
     "hours": "7~8월 운영",
     "familyFriendly": true,
-    "note": "어린이 물놀이터"
+    "note": "어린이 물놀이터",
+    "city": "서울"
   },
   {
     "id": "water-dongdaemun-water",
@@ -441,7 +477,8 @@
     "lng": 127.0591,
     "hours": "7~8월 09:00~18:00",
     "familyFriendly": true,
-    "note": "중랑천 무료 물놀이"
+    "note": "중랑천 무료 물놀이",
+    "city": "서울"
   },
   {
     "id": "water-junggu-cheonggye",
@@ -449,11 +486,12 @@
     "category": "water",
     "gu": "중구",
     "address": "서울 중구 을지로 청계천변",
-    "lat": 37.5690,
+    "lat": 37.569,
     "lng": 126.9954,
     "hours": "24시간",
     "familyFriendly": true,
-    "note": "청계천 수변 쉼터·발 담그기"
+    "note": "청계천 수변 쉼터·발 담그기",
+    "city": "서울"
   },
   {
     "id": "water-jongno-inwang-water",
@@ -461,11 +499,12 @@
     "category": "water",
     "gu": "종로구",
     "address": "서울 종로구 옥인동 수성동계곡",
-    "lat": 37.5810,
+    "lat": 37.581,
     "lng": 126.9634,
     "hours": "상시",
     "familyFriendly": true,
-    "note": "자연계곡, 여름 피서 명소"
+    "note": "자연계곡, 여름 피서 명소",
+    "city": "서울"
   },
   {
     "id": "water-seongbuk-water",
@@ -474,10 +513,11 @@
     "gu": "성북구",
     "address": "서울 성북구 성북동 북악산 근린공원",
     "lat": 37.6025,
-    "lng": 126.9980,
+    "lng": 126.998,
     "hours": "7~8월 운영",
     "familyFriendly": true,
-    "note": "어린이 물놀이터"
+    "note": "어린이 물놀이터",
+    "city": "서울"
   },
   {
     "id": "water-gangbuk-water",
@@ -489,7 +529,8 @@
     "lng": 127.0164,
     "hours": "7~8월 09:00~18:00",
     "familyFriendly": true,
-    "note": "우이천 물놀이 구간"
+    "note": "우이천 물놀이 구간",
+    "city": "서울"
   },
   {
     "id": "water-jungnang-water2",
@@ -501,6 +542,7 @@
     "lng": 127.0897,
     "hours": "매시 정각 폭포 가동, 7~8월 물놀이",
     "familyFriendly": true,
-    "note": "인공폭포 3개, 물놀이 구역"
+    "note": "인공폭포 3개, 물놀이 구역",
+    "city": "서울"
   }
 ]

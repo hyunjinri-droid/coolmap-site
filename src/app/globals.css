@@ -227,6 +227,37 @@ body {
   font-size: 12px;
 }
 
+/* ── 시/도 선택 바 ──────────────────────────────── */
+.city-bar {
+  display: flex;
+  gap: 6px;
+  padding: 6px 12px;
+  overflow-x: auto;
+  background: #fff;
+  border-bottom: 1px solid #e2e8f0;
+  scrollbar-width: none;
+}
+.city-bar::-webkit-scrollbar { display: none; }
+
+.city-chip {
+  flex-shrink: 0;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1.5px solid #e2e8f0;
+  background: #f8fafc;
+  font-size: 13px;
+  font-weight: 500;
+  color: #64748b;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.city-chip.active {
+  background: #0284c7;
+  border-color: #0284c7;
+  color: #fff;
+  font-weight: 700;
+}
+
 /* ── 필터 바 ────────────────────────────────────── */
 .filter-bar {
   display: flex;
