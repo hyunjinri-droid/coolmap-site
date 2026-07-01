@@ -113,15 +113,32 @@ async function fetchPage(pageNo) {
   };
 }
 
+// Web Mercator (EPSG:3857) → WGS84
+function mercatorToLatLng(x, y) {
+  const lng = (x / 20037508.34) * 180;
+  const lat = (Math.atan(Math.exp((y / 20037508.34) * Math.PI)) * 2 - Math.PI / 2) * (180 / Math.PI);
+  return { lat, lng };
+}
+
 function toPlace(raw, index) {
-  const name = pick(raw, ["FCLTY_NM", "fcltyNm", "shelterName", "name", "NAME"]);
-  const roadAddr = pick(raw, ["RN_ADRES", "ROAD_NM_ADRES", "rnAdres", "roadAddr"]);
-  const lotAddr = pick(raw, ["LOTNO_ADRES", "lotnoAdres", "jibunAddr"]);
-  const address = roadAddr || lotAddr;
-  const lat = Number(pick(raw, ["LA", "la", "lat", "LAT", "latitude"]));
-  const lng = Number(pick(raw, ["LO", "lo", "lng", "LOT", "LON", "longitude"]));
-  const fcltyTy = pick(raw, ["FCLTY_TY", "HOT_PLACE_TY_NM", "fcltyTy", "shelterType"]) ?? "";
+  const name = pick(raw, ["cc_nm", "FCLTY_NM", "fcltyNm", "shelterName", "name"]);
+  const roadAddr = pick(raw, ["rn_adres", "RN_ADRES", "rnAdres", "roadAddr"]);
+  const lotAddr = pick(raw, ["adres", "LOTNO_ADRES", "lotnoAdres", "jibunAddr"]);
+  const address = (roadAddr !== "-" ? roadAddr : null) || (lotAddr !== "-" ? lotAddr : null);
+  const fcltyTy = pick(raw, ["cc_type", "FCLTY_TY", "fcltyTy", "shelterType"]) ?? "";
   const hours = pick(raw, ["USE_AT", "OPER_TIME", "useAt", "operTime"]);
+
+  // 좌표: Web Mercator(x,y) 또는 직접 위경도
+  let lat, lng;
+  const rawX = Number(pick(raw, ["x", "X"]));
+  const rawY = Number(pick(raw, ["y", "Y"]));
+  if (!Number.isNaN(rawX) && rawX > 1_000_000) {
+    // Web Mercator → WGS84
+    ({ lat, lng } = mercatorToLatLng(rawX, rawY));
+  } else {
+    lat = Number(pick(raw, ["LA", "la", "lat", "LAT", "latitude"]));
+    lng = Number(pick(raw, ["LO", "lo", "lng", "LOT", "LON", "longitude"]));
+  }
 
   if (!name || !address || Number.isNaN(lat) || Number.isNaN(lng) || lat === 0 || lng === 0) {
     if (DEBUG) console.log("변환 실패:", JSON.stringify(raw));
