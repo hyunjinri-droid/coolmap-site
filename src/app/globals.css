@@ -418,6 +418,11 @@ body {
   color: #166534;
 }
 
+.badge-dist {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
 /* 정보 행 */
 .detail-sheet-info {
   display: flex;
@@ -476,4 +481,10 @@ body {
 
 .detail-sheet-ad {
   margin-top: 12px;
+}
+
+/* ── 마커 클러스터 ────────────────────────────────── */
+.coolmap-cluster {
+  background: transparent !important;
+  border: none !important;
 }

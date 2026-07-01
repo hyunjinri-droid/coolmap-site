@@ -93,6 +93,7 @@ export default function CoolMapApp({ gu }: { gu?: string }) {
           userPosition={userPosition}
           selectedId={selected?.id ?? null}
           onSelect={setSelected}
+          selectedPlace={selected}
         />
         <div className="map-count-badge">
           📌 {places.length.toLocaleString()}곳
@@ -104,7 +105,11 @@ export default function CoolMapApp({ gu }: { gu?: string }) {
           </div>
         )}
       </div>
-      <DetailSheet place={selected} onClose={() => setSelected(null)} />
+      <DetailSheet
+        place={selected}
+        onClose={() => setSelected(null)}
+        userPosition={userPosition}
+      />
     </div>
   );
 }
