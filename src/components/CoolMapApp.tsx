@@ -34,6 +34,14 @@ export default function CoolMapApp({ gu }: { gu?: string }) {
     });
   }, [gu, filter, familyOnly, query]);
 
+  const basePlaces = useMemo(() => ALL_PLACES.filter((p) => !gu || p.gu === gu), [gu]);
+  const counts = useMemo(() => ({
+    all:     basePlaces.length,
+    shelter: basePlaces.filter((p) => p.category === "shelter").length,
+    shade:   basePlaces.filter((p) => p.category === "shade").length,
+    water:   basePlaces.filter((p) => p.category === "water").length,
+  }), [basePlaces]);
+
   const center = userPosition ?? SEOUL_CENTER;
 
   function handleLocate() {
@@ -76,6 +84,7 @@ export default function CoolMapApp({ gu }: { gu?: string }) {
         onChange={setFilter}
         familyOnly={familyOnly}
         onFamilyOnlyChange={setFamilyOnly}
+        counts={counts}
       />
       <div className="map-wrap">
         <CoolMapClient
@@ -85,6 +94,9 @@ export default function CoolMapApp({ gu }: { gu?: string }) {
           selectedId={selected?.id ?? null}
           onSelect={setSelected}
         />
+        <div className="map-count-badge">
+          📌 {places.length.toLocaleString()}곳
+        </div>
         {places.length === 0 && (
           <div className="empty-state">
             {gu ? `${gu}에는` : "선택한 조건에는"} 아직 등록된 장소가 없어요. 다른
