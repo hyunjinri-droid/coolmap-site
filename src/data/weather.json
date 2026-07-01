@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-01T17:24:25.028Z",
+  "generatedAt": "2026-07-01T20:16:53.569Z",
   "baseDate": "20260702",
-  "baseTime": "0200",
+  "baseTime": "0500",
   "items": [
     {
       "gu": "종로구",
@@ -42,7 +42,7 @@
     {
       "gu": "광진구",
       "tmp": 23,
-      "reh": 80,
+      "reh": 85,
       "feelsLikeC": 23,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
@@ -104,27 +104,27 @@
     },
     {
       "gu": "은평구",
-      "tmp": 22,
+      "tmp": 21,
       "reh": 90,
-      "feelsLikeC": 22,
+      "feelsLikeC": 21,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "서대문구",
-      "tmp": 22,
+      "tmp": 21,
       "reh": 90,
-      "feelsLikeC": 22,
+      "feelsLikeC": 21,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "마포구",
-      "tmp": 22,
+      "tmp": 21,
       "reh": 90,
-      "feelsLikeC": 22,
+      "feelsLikeC": 21,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "외출하기 좋은 날씨예요"
@@ -185,18 +185,18 @@
     },
     {
       "gu": "관악구",
-      "tmp": 23,
+      "tmp": 22,
       "reh": 85,
-      "feelsLikeC": 23,
+      "feelsLikeC": 22,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "서초구",
-      "tmp": 23,
+      "tmp": 22,
       "reh": 85,
-      "feelsLikeC": 23,
+      "feelsLikeC": 22,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "외출하기 좋은 날씨예요"
@@ -213,7 +213,7 @@
     {
       "gu": "송파구",
       "tmp": 23,
-      "reh": 80,
+      "reh": 85,
       "feelsLikeC": 23,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
@@ -222,7 +222,7 @@
     {
       "gu": "강동구",
       "tmp": 23,
-      "reh": 80,
+      "reh": 85,
       "feelsLikeC": 23,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
