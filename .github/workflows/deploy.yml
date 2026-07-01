@@ -2,7 +2,7 @@ name: Deploy to Cloudflare Pages
 
 on:
   push:
-    branches: [main]
+    branches: [claude/coolmap-shade-map-site-qr83mw]
   workflow_dispatch: {}
 
 permissions:
@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: 20
           cache: "npm"
-      - run: npm ci
+      - run: npm ci --legacy-peer-deps
       - run: npm run build
       - name: Publish to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
