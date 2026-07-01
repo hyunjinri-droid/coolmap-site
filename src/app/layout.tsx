@@ -11,8 +11,7 @@ const DESCRIPTION =
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   verification: {
-    google: "yDX0ROR88DL0J5zK8U7iQJvqbPFotC8hBxkZ0pG4L6w",
-    other: { "naver-site-verification": "1d4bb8fd9f21832da642895e11f4e4c24c540afc" },
+    other: { "naver-site-verification": "ca9f7c84175975502232a9cc7dccc1d76119cbab" },
   },
   title: {
     default: TITLE,
@@ -38,7 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ko">
       <head>
-        <meta name="google-site-verification" content="yDX0ROR88DL0J5zK8U7iQJvqbPFotC8hBxkZ0pG4L6w" />
+        <meta name="google-site-verification" content="rMsO0KXH9yDeqKYUEAjQrneJFlxN4qPUFbPNJT5VecU" />
       </head>
       <body>
         {children}
