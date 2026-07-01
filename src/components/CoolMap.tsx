@@ -80,8 +80,10 @@ export default function CoolMap({
       style={{ width: "100%", height: "100%" }}
     >
       <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution='&copy; <a href="https://www.vworld.kr">브이월드</a>'
+        url="https://api.vworld.kr/req/wmts/1.0.0/B2EA68DD-228E-30F6-83DF-307BFD4A538F/Base/{z}/{y}/{x}.png"
+        minZoom={6}
+        maxZoom={19}
       />
       {userPosition && <RecenterOnUser position={userPosition} />}
       {selectedPlace && <FlyToSelected place={selectedPlace} />}
