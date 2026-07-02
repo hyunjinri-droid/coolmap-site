@@ -16,7 +16,7 @@ export default function KakaoAdFit() {
   }, []);
 
   return (
-    <div ref={ref} style={{ textAlign: "center", margin: "0 auto" }}>
+    <div ref={ref} style={{ textAlign: "center", margin: "12px auto", padding: "4px 0" }}>
       <ins
         className="kakao_ad_area"
         style={{ display: "none" }}

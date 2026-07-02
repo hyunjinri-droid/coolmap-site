@@ -96,6 +96,7 @@ export default function CoolMapApp({ gu }: { gu?: string }) {
         <div className="locate-banner">이 브라우저에서는 위치 확인을 지원하지 않아요.</div>
       )}
       <StatusBadge status={weather} />
+      <KakaoAdFit />
       <div className="city-bar">
         {ALL_CITIES.map((city) => (
           <button
@@ -133,7 +134,6 @@ export default function CoolMapApp({ gu }: { gu?: string }) {
           </div>
         )}
       </div>
-      <KakaoAdFit />
       <DetailSheet
         place={selected}
         onClose={() => setSelected(null)}
