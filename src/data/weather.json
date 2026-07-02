@@ -1,232 +1,232 @@
 {
-  "generatedAt": "2026-07-01T22:41:38.532Z",
+  "generatedAt": "2026-07-02T04:32:06.572Z",
   "baseDate": "20260702",
-  "baseTime": "0500",
+  "baseTime": "1100",
   "items": [
     {
       "gu": "종로구",
-      "tmp": 22,
-      "reh": 85,
-      "feelsLikeC": 22,
+      "tmp": 28,
+      "reh": 60,
+      "feelsLikeC": 29.4,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "외출하기 좋은 날씨예요"
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
     },
     {
       "gu": "중구",
-      "tmp": 22,
-      "reh": 85,
-      "feelsLikeC": 22,
+      "tmp": 28,
+      "reh": 60,
+      "feelsLikeC": 29.4,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "외출하기 좋은 날씨예요"
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
     },
     {
       "gu": "용산구",
-      "tmp": 23,
-      "reh": 85,
-      "feelsLikeC": 23,
+      "tmp": 28,
+      "reh": 60,
+      "feelsLikeC": 29.4,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "외출하기 좋은 날씨예요"
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
     },
     {
       "gu": "성동구",
-      "tmp": 23,
-      "reh": 85,
-      "feelsLikeC": 23,
+      "tmp": 28,
+      "reh": 55,
+      "feelsLikeC": 28.9,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "외출하기 좋은 날씨예요"
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
     },
     {
       "gu": "광진구",
-      "tmp": 23,
-      "reh": 85,
-      "feelsLikeC": 23,
+      "tmp": 28,
+      "reh": 60,
+      "feelsLikeC": 29.4,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "외출하기 좋은 날씨예요"
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
     },
     {
       "gu": "동대문구",
-      "tmp": 23,
-      "reh": 85,
-      "feelsLikeC": 23,
+      "tmp": 28,
+      "reh": 55,
+      "feelsLikeC": 28.9,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "외출하기 좋은 날씨예요"
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
     },
     {
       "gu": "중랑구",
-      "tmp": 21,
-      "reh": 90,
-      "feelsLikeC": 21,
+      "tmp": 28,
+      "reh": 60,
+      "feelsLikeC": 29.4,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "외출하기 좋은 날씨예요"
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
     },
     {
       "gu": "성북구",
-      "tmp": 22,
-      "reh": 85,
-      "feelsLikeC": 22,
+      "tmp": 28,
+      "reh": 60,
+      "feelsLikeC": 29.4,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "외출하기 좋은 날씨예요"
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
     },
     {
       "gu": "강북구",
-      "tmp": 22,
-      "reh": 90,
-      "feelsLikeC": 22,
+      "tmp": 28,
+      "reh": 60,
+      "feelsLikeC": 29.4,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "외출하기 좋은 날씨예요"
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
     },
     {
       "gu": "도봉구",
-      "tmp": 21,
-      "reh": 90,
-      "feelsLikeC": 21,
+      "tmp": 27,
+      "reh": 60,
+      "feelsLikeC": 28.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "외출하기 좋은 날씨예요"
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
     },
     {
       "gu": "노원구",
-      "tmp": 21,
-      "reh": 90,
-      "feelsLikeC": 21,
+      "tmp": 27,
+      "reh": 60,
+      "feelsLikeC": 28.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "외출하기 좋은 날씨예요"
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
     },
     {
       "gu": "은평구",
-      "tmp": 21,
-      "reh": 90,
-      "feelsLikeC": 21,
+      "tmp": 27,
+      "reh": 60,
+      "feelsLikeC": 28.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "외출하기 좋은 날씨예요"
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
     },
     {
       "gu": "서대문구",
-      "tmp": 21,
-      "reh": 90,
-      "feelsLikeC": 21,
+      "tmp": 27,
+      "reh": 60,
+      "feelsLikeC": 28.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "외출하기 좋은 날씨예요"
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
     },
     {
       "gu": "마포구",
-      "tmp": 21,
-      "reh": 90,
-      "feelsLikeC": 21,
+      "tmp": 27,
+      "reh": 60,
+      "feelsLikeC": 28.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "외출하기 좋은 날씨예요"
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
     },
     {
       "gu": "양천구",
-      "tmp": 23,
-      "reh": 85,
-      "feelsLikeC": 23,
+      "tmp": 28,
+      "reh": 60,
+      "feelsLikeC": 29.4,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "외출하기 좋은 날씨예요"
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
     },
     {
       "gu": "강서구",
-      "tmp": 23,
-      "reh": 85,
-      "feelsLikeC": 23,
+      "tmp": 28,
+      "reh": 60,
+      "feelsLikeC": 29.4,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "외출하기 좋은 날씨예요"
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
     },
     {
       "gu": "구로구",
-      "tmp": 23,
-      "reh": 85,
-      "feelsLikeC": 23,
+      "tmp": 28,
+      "reh": 55,
+      "feelsLikeC": 28.9,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "외출하기 좋은 날씨예요"
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
     },
     {
       "gu": "금천구",
-      "tmp": 22,
-      "reh": 85,
-      "feelsLikeC": 22,
+      "tmp": 28,
+      "reh": 60,
+      "feelsLikeC": 29.4,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "외출하기 좋은 날씨예요"
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
     },
     {
       "gu": "영등포구",
-      "tmp": 23,
-      "reh": 85,
-      "feelsLikeC": 23,
+      "tmp": 28,
+      "reh": 60,
+      "feelsLikeC": 29.4,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "외출하기 좋은 날씨예요"
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
     },
     {
       "gu": "동작구",
-      "tmp": 22,
-      "reh": 85,
-      "feelsLikeC": 22,
+      "tmp": 28,
+      "reh": 60,
+      "feelsLikeC": 29.4,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "외출하기 좋은 날씨예요"
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
     },
     {
       "gu": "관악구",
-      "tmp": 22,
-      "reh": 85,
-      "feelsLikeC": 22,
+      "tmp": 28,
+      "reh": 60,
+      "feelsLikeC": 29.4,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "외출하기 좋은 날씨예요"
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
     },
     {
       "gu": "서초구",
-      "tmp": 22,
-      "reh": 85,
-      "feelsLikeC": 22,
+      "tmp": 28,
+      "reh": 60,
+      "feelsLikeC": 29.4,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "외출하기 좋은 날씨예요"
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
     },
     {
       "gu": "강남구",
-      "tmp": 23,
-      "reh": 85,
-      "feelsLikeC": 23,
+      "tmp": 28,
+      "reh": 60,
+      "feelsLikeC": 29.4,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "외출하기 좋은 날씨예요"
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
     },
     {
       "gu": "송파구",
-      "tmp": 23,
-      "reh": 85,
-      "feelsLikeC": 23,
+      "tmp": 28,
+      "reh": 60,
+      "feelsLikeC": 29.4,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "외출하기 좋은 날씨예요"
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
     },
     {
       "gu": "강동구",
-      "tmp": 23,
-      "reh": 85,
-      "feelsLikeC": 23,
+      "tmp": 28,
+      "reh": 60,
+      "feelsLikeC": 29.4,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "외출하기 좋은 날씨예요"
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
     }
   ]
 }
