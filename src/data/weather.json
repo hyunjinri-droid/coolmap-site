@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-04T19:38:57.036Z",
+  "generatedAt": "2026-07-04T22:12:42.581Z",
   "baseDate": "20260705",
-  "baseTime": "0200",
+  "baseTime": "0500",
   "items": [
     {
       "gu": "종로구",
@@ -33,7 +33,7 @@
     {
       "gu": "성동구",
       "tmp": 24,
-      "reh": 85,
+      "reh": 90,
       "feelsLikeC": 24,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
@@ -42,7 +42,7 @@
     {
       "gu": "광진구",
       "tmp": 24,
-      "reh": 85,
+      "reh": 90,
       "feelsLikeC": 24,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
@@ -51,7 +51,7 @@
     {
       "gu": "동대문구",
       "tmp": 24,
-      "reh": 85,
+      "reh": 90,
       "feelsLikeC": 24,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
@@ -150,7 +150,7 @@
     {
       "gu": "구로구",
       "tmp": 24,
-      "reh": 85,
+      "reh": 90,
       "feelsLikeC": 24,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
@@ -186,7 +186,7 @@
     {
       "gu": "관악구",
       "tmp": 24,
-      "reh": 85,
+      "reh": 90,
       "feelsLikeC": 24,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
@@ -213,7 +213,7 @@
     {
       "gu": "송파구",
       "tmp": 24,
-      "reh": 85,
+      "reh": 90,
       "feelsLikeC": 24,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
@@ -222,7 +222,7 @@
     {
       "gu": "강동구",
       "tmp": 24,
-      "reh": 85,
+      "reh": 90,
       "feelsLikeC": 24,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
