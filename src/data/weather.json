@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-06T04:41:08.882Z",
+  "generatedAt": "2026-07-06T11:04:37.879Z",
   "baseDate": "20260706",
-  "baseTime": "1100",
+  "baseTime": "1700",
   "items": [
     {
       "gu": "종로구",
@@ -59,9 +59,9 @@
     },
     {
       "gu": "중랑구",
-      "tmp": 26,
+      "tmp": 27,
       "reh": 80,
-      "feelsLikeC": 26,
+      "feelsLikeC": 29.7,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
@@ -136,7 +136,7 @@
       "feelsLikeC": 29.7,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
     },
     {
       "gu": "강서구",
@@ -145,7 +145,7 @@
       "feelsLikeC": 29.7,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
     },
     {
       "gu": "구로구",
@@ -154,16 +154,16 @@
       "feelsLikeC": 29.7,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
     },
     {
       "gu": "금천구",
-      "tmp": 26,
+      "tmp": 27,
       "reh": 80,
-      "feelsLikeC": 26,
+      "feelsLikeC": 29.7,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
     },
     {
       "gu": "영등포구",
@@ -172,7 +172,7 @@
       "feelsLikeC": 29.7,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
     },
     {
       "gu": "동작구",
@@ -204,8 +204,8 @@
     {
       "gu": "강남구",
       "tmp": 27,
-      "reh": 75,
-      "feelsLikeC": 29.3,
+      "reh": 80,
+      "feelsLikeC": 29.7,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
