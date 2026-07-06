@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-06T15:55:37.954Z",
-  "baseDate": "20260706",
-  "baseTime": "2300",
+  "generatedAt": "2026-07-06T20:16:22.903Z",
+  "baseDate": "20260707",
+  "baseTime": "0200",
   "items": [
     {
       "gu": "종로구",
@@ -41,9 +41,9 @@
     },
     {
       "gu": "광진구",
-      "tmp": 26,
+      "tmp": 25,
       "reh": 90,
-      "feelsLikeC": 26,
+      "feelsLikeC": 25,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "외출하기 좋은 날씨예요"
@@ -60,7 +60,7 @@
     {
       "gu": "중랑구",
       "tmp": 24,
-      "reh": 90,
+      "reh": 95,
       "feelsLikeC": 24,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
@@ -87,7 +87,7 @@
     {
       "gu": "도봉구",
       "tmp": 24,
-      "reh": 90,
+      "reh": 95,
       "feelsLikeC": 24,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
@@ -96,7 +96,7 @@
     {
       "gu": "노원구",
       "tmp": 24,
-      "reh": 90,
+      "reh": 95,
       "feelsLikeC": 24,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
@@ -159,7 +159,7 @@
     {
       "gu": "금천구",
       "tmp": 25,
-      "reh": 90,
+      "reh": 95,
       "feelsLikeC": 25,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
@@ -203,27 +203,27 @@
     },
     {
       "gu": "강남구",
-      "tmp": 26,
-      "reh": 85,
-      "feelsLikeC": 26,
+      "tmp": 25,
+      "reh": 90,
+      "feelsLikeC": 25,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "송파구",
-      "tmp": 26,
+      "tmp": 25,
       "reh": 90,
-      "feelsLikeC": 26,
+      "feelsLikeC": 25,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "강동구",
-      "tmp": 26,
+      "tmp": 25,
       "reh": 90,
-      "feelsLikeC": 26,
+      "feelsLikeC": 25,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "외출하기 좋은 날씨예요"
