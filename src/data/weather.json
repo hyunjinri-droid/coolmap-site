@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-10T17:09:06.170Z",
-  "baseDate": "20260710",
-  "baseTime": "2300",
+  "generatedAt": "2026-07-10T19:53:30.538Z",
+  "baseDate": "20260711",
+  "baseTime": "0200",
   "items": [
     {
       "gu": "종로구",
@@ -9,7 +9,7 @@
       "reh": 95,
       "feelsLikeC": 25,
       "heatWaveAlert": false,
-      "heatWaveSource": "official",
+      "heatWaveSource": "estimated",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
@@ -18,7 +18,7 @@
       "reh": 95,
       "feelsLikeC": 25,
       "heatWaveAlert": false,
-      "heatWaveSource": "official",
+      "heatWaveSource": "estimated",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
@@ -27,7 +27,7 @@
       "reh": 90,
       "feelsLikeC": 26,
       "heatWaveAlert": false,
-      "heatWaveSource": "official",
+      "heatWaveSource": "estimated",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
@@ -36,7 +36,7 @@
       "reh": 90,
       "feelsLikeC": 26,
       "heatWaveAlert": false,
-      "heatWaveSource": "official",
+      "heatWaveSource": "estimated",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
@@ -45,7 +45,7 @@
       "reh": 90,
       "feelsLikeC": 26,
       "heatWaveAlert": false,
-      "heatWaveSource": "official",
+      "heatWaveSource": "estimated",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
@@ -54,7 +54,7 @@
       "reh": 90,
       "feelsLikeC": 26,
       "heatWaveAlert": false,
-      "heatWaveSource": "official",
+      "heatWaveSource": "estimated",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
@@ -63,7 +63,7 @@
       "reh": 95,
       "feelsLikeC": 25,
       "heatWaveAlert": false,
-      "heatWaveSource": "official",
+      "heatWaveSource": "estimated",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
@@ -72,16 +72,16 @@
       "reh": 95,
       "feelsLikeC": 25,
       "heatWaveAlert": false,
-      "heatWaveSource": "official",
+      "heatWaveSource": "estimated",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "강북구",
       "tmp": 25,
-      "reh": 95,
+      "reh": 90,
       "feelsLikeC": 25,
       "heatWaveAlert": false,
-      "heatWaveSource": "official",
+      "heatWaveSource": "estimated",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
@@ -90,7 +90,7 @@
       "reh": 95,
       "feelsLikeC": 25,
       "heatWaveAlert": false,
-      "heatWaveSource": "official",
+      "heatWaveSource": "estimated",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
@@ -99,7 +99,7 @@
       "reh": 95,
       "feelsLikeC": 25,
       "heatWaveAlert": false,
-      "heatWaveSource": "official",
+      "heatWaveSource": "estimated",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
@@ -108,7 +108,7 @@
       "reh": 95,
       "feelsLikeC": 25,
       "heatWaveAlert": false,
-      "heatWaveSource": "official",
+      "heatWaveSource": "estimated",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
@@ -117,7 +117,7 @@
       "reh": 95,
       "feelsLikeC": 25,
       "heatWaveAlert": false,
-      "heatWaveSource": "official",
+      "heatWaveSource": "estimated",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
@@ -126,25 +126,25 @@
       "reh": 95,
       "feelsLikeC": 25,
       "heatWaveAlert": false,
-      "heatWaveSource": "official",
+      "heatWaveSource": "estimated",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "양천구",
-      "tmp": 26,
-      "reh": 90,
-      "feelsLikeC": 26,
+      "tmp": 25,
+      "reh": 95,
+      "feelsLikeC": 25,
       "heatWaveAlert": false,
-      "heatWaveSource": "official",
+      "heatWaveSource": "estimated",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "강서구",
-      "tmp": 26,
-      "reh": 90,
-      "feelsLikeC": 26,
+      "tmp": 25,
+      "reh": 95,
+      "feelsLikeC": 25,
       "heatWaveAlert": false,
-      "heatWaveSource": "official",
+      "heatWaveSource": "estimated",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
@@ -153,7 +153,7 @@
       "reh": 90,
       "feelsLikeC": 26,
       "heatWaveAlert": false,
-      "heatWaveSource": "official",
+      "heatWaveSource": "estimated",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
@@ -162,43 +162,43 @@
       "reh": 95,
       "feelsLikeC": 25,
       "heatWaveAlert": false,
-      "heatWaveSource": "official",
+      "heatWaveSource": "estimated",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "영등포구",
-      "tmp": 26,
-      "reh": 90,
-      "feelsLikeC": 26,
+      "tmp": 25,
+      "reh": 95,
+      "feelsLikeC": 25,
       "heatWaveAlert": false,
-      "heatWaveSource": "official",
+      "heatWaveSource": "estimated",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "동작구",
-      "tmp": 26,
+      "tmp": 25,
       "reh": 90,
-      "feelsLikeC": 26,
+      "feelsLikeC": 25,
       "heatWaveAlert": false,
-      "heatWaveSource": "official",
+      "heatWaveSource": "estimated",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "관악구",
-      "tmp": 26,
+      "tmp": 25,
       "reh": 90,
-      "feelsLikeC": 26,
+      "feelsLikeC": 25,
       "heatWaveAlert": false,
-      "heatWaveSource": "official",
+      "heatWaveSource": "estimated",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "서초구",
-      "tmp": 26,
+      "tmp": 25,
       "reh": 95,
-      "feelsLikeC": 26,
+      "feelsLikeC": 25,
       "heatWaveAlert": false,
-      "heatWaveSource": "official",
+      "heatWaveSource": "estimated",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
@@ -207,7 +207,7 @@
       "reh": 90,
       "feelsLikeC": 26,
       "heatWaveAlert": false,
-      "heatWaveSource": "official",
+      "heatWaveSource": "estimated",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
@@ -216,7 +216,7 @@
       "reh": 90,
       "feelsLikeC": 26,
       "heatWaveAlert": false,
-      "heatWaveSource": "official",
+      "heatWaveSource": "estimated",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
@@ -225,7 +225,7 @@
       "reh": 90,
       "feelsLikeC": 26,
       "heatWaveAlert": false,
-      "heatWaveSource": "official",
+      "heatWaveSource": "estimated",
       "recommendation": "외출하기 좋은 날씨예요"
     }
   ]
