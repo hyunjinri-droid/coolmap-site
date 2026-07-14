@@ -40,6 +40,14 @@ function RecenterOnUser({ position }: { position: [number, number] | null }) {
   return null;
 }
 
+function FlyToCity({ center }: { center: [number, number] }) {
+  const map = useMap();
+  useEffect(() => {
+    map.setView(center, 12, { animate: true });
+  }, [center, map]);
+  return null;
+}
+
 function FlyToSelected({ place }: { place: Place | null }) {
   const map = useMap();
   useEffect(() => {
@@ -85,6 +93,7 @@ export default function CoolMap({
         minZoom={6}
         maxZoom={19}
       />
+      <FlyToCity center={center} />
       {userPosition && <RecenterOnUser position={userPosition} />}
       {selectedPlace && <FlyToSelected place={selectedPlace} />}
 
