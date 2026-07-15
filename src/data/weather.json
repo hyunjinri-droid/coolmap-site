@@ -1,22 +1,22 @@
 {
-  "generatedAt": "2026-07-15T16:46:02.503Z",
-  "baseDate": "20260715",
-  "baseTime": "2300",
+  "generatedAt": "2026-07-15T19:37:34.637Z",
+  "baseDate": "20260716",
+  "baseTime": "0200",
   "items": [
     {
       "gu": "종로구",
-      "tmp": 24,
+      "tmp": 23,
       "reh": 95,
-      "feelsLikeC": 24,
+      "feelsLikeC": 23,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "중구",
-      "tmp": 24,
+      "tmp": 23,
       "reh": 95,
-      "feelsLikeC": 24,
+      "feelsLikeC": 23,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "외출하기 좋은 날씨예요"
@@ -24,7 +24,7 @@
     {
       "gu": "용산구",
       "tmp": 24,
-      "reh": 90,
+      "reh": 95,
       "feelsLikeC": 24,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
@@ -33,7 +33,7 @@
     {
       "gu": "성동구",
       "tmp": 24,
-      "reh": 90,
+      "reh": 95,
       "feelsLikeC": 24,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
@@ -41,9 +41,9 @@
     },
     {
       "gu": "광진구",
-      "tmp": 24,
-      "reh": 90,
-      "feelsLikeC": 24,
+      "tmp": 23,
+      "reh": 95,
+      "feelsLikeC": 23,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "외출하기 좋은 날씨예요"
@@ -51,7 +51,7 @@
     {
       "gu": "동대문구",
       "tmp": 24,
-      "reh": 90,
+      "reh": 95,
       "feelsLikeC": 24,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
@@ -68,9 +68,9 @@
     },
     {
       "gu": "성북구",
-      "tmp": 24,
+      "tmp": 23,
       "reh": 95,
-      "feelsLikeC": 24,
+      "feelsLikeC": 23,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "외출하기 좋은 날씨예요"
@@ -132,7 +132,7 @@
     {
       "gu": "양천구",
       "tmp": 24,
-      "reh": 90,
+      "reh": 95,
       "feelsLikeC": 24,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
@@ -141,7 +141,7 @@
     {
       "gu": "강서구",
       "tmp": 24,
-      "reh": 90,
+      "reh": 95,
       "feelsLikeC": 24,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
@@ -150,7 +150,7 @@
     {
       "gu": "구로구",
       "tmp": 24,
-      "reh": 90,
+      "reh": 95,
       "feelsLikeC": 24,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
@@ -158,9 +158,9 @@
     },
     {
       "gu": "금천구",
-      "tmp": 24,
+      "tmp": 23,
       "reh": 95,
-      "feelsLikeC": 24,
+      "feelsLikeC": 23,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "외출하기 좋은 날씨예요"
@@ -168,7 +168,7 @@
     {
       "gu": "영등포구",
       "tmp": 24,
-      "reh": 90,
+      "reh": 95,
       "feelsLikeC": 24,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
@@ -176,9 +176,9 @@
     },
     {
       "gu": "동작구",
-      "tmp": 24,
+      "tmp": 23,
       "reh": 95,
-      "feelsLikeC": 24,
+      "feelsLikeC": 23,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "외출하기 좋은 날씨예요"
@@ -194,6 +194,15 @@
     },
     {
       "gu": "서초구",
+      "tmp": 23,
+      "reh": 95,
+      "feelsLikeC": 23,
+      "heatWaveAlert": false,
+      "heatWaveSource": "official",
+      "recommendation": "외출하기 좋은 날씨예요"
+    },
+    {
+      "gu": "강남구",
       "tmp": 24,
       "reh": 95,
       "feelsLikeC": 24,
@@ -202,28 +211,19 @@
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
-      "gu": "강남구",
-      "tmp": 24,
-      "reh": 90,
-      "feelsLikeC": 24,
-      "heatWaveAlert": false,
-      "heatWaveSource": "official",
-      "recommendation": "외출하기 좋은 날씨예요"
-    },
-    {
       "gu": "송파구",
-      "tmp": 24,
-      "reh": 90,
-      "feelsLikeC": 24,
+      "tmp": 23,
+      "reh": 95,
+      "feelsLikeC": 23,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "강동구",
-      "tmp": 24,
-      "reh": 90,
-      "feelsLikeC": 24,
+      "tmp": 23,
+      "reh": 95,
+      "feelsLikeC": 23,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "외출하기 좋은 날씨예요"
