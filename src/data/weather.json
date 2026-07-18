@@ -1,22 +1,22 @@
 {
-  "generatedAt": "2026-07-18T03:34:00.366Z",
+  "generatedAt": "2026-07-18T08:10:55.486Z",
   "baseDate": "20260718",
-  "baseTime": "1100",
+  "baseTime": "1400",
   "items": [
     {
       "gu": "종로구",
-      "tmp": 26,
-      "reh": 85,
-      "feelsLikeC": 26,
+      "tmp": 27,
+      "reh": 80,
+      "feelsLikeC": 29.7,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
     },
     {
       "gu": "중구",
-      "tmp": 26,
-      "reh": 85,
-      "feelsLikeC": 26,
+      "tmp": 27,
+      "reh": 80,
+      "feelsLikeC": 29.7,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
@@ -32,9 +32,9 @@
     },
     {
       "gu": "성동구",
-      "tmp": 26,
-      "reh": 80,
-      "feelsLikeC": 26,
+      "tmp": 27,
+      "reh": 75,
+      "feelsLikeC": 29.3,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
@@ -42,134 +42,134 @@
     {
       "gu": "광진구",
       "tmp": 27,
-      "reh": 85,
-      "feelsLikeC": 30.2,
+      "reh": 80,
+      "feelsLikeC": 29.7,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
     },
     {
       "gu": "동대문구",
-      "tmp": 26,
-      "reh": 80,
-      "feelsLikeC": 26,
+      "tmp": 27,
+      "reh": 75,
+      "feelsLikeC": 29.3,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
     },
     {
       "gu": "중랑구",
-      "tmp": 25,
-      "reh": 80,
-      "feelsLikeC": 25,
+      "tmp": 26,
+      "reh": 75,
+      "feelsLikeC": 26,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
     },
     {
       "gu": "성북구",
-      "tmp": 26,
-      "reh": 85,
-      "feelsLikeC": 26,
+      "tmp": 27,
+      "reh": 80,
+      "feelsLikeC": 29.7,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
     },
     {
       "gu": "강북구",
-      "tmp": 26,
-      "reh": 80,
-      "feelsLikeC": 26,
+      "tmp": 27,
+      "reh": 75,
+      "feelsLikeC": 29.3,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
     },
     {
       "gu": "도봉구",
-      "tmp": 25,
-      "reh": 85,
-      "feelsLikeC": 25,
+      "tmp": 27,
+      "reh": 75,
+      "feelsLikeC": 29.3,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
     },
     {
       "gu": "노원구",
-      "tmp": 25,
-      "reh": 85,
-      "feelsLikeC": 25,
+      "tmp": 27,
+      "reh": 75,
+      "feelsLikeC": 29.3,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
     },
     {
       "gu": "은평구",
-      "tmp": 26,
-      "reh": 85,
-      "feelsLikeC": 26,
+      "tmp": 27,
+      "reh": 80,
+      "feelsLikeC": 29.7,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
     },
     {
       "gu": "서대문구",
-      "tmp": 26,
-      "reh": 85,
-      "feelsLikeC": 26,
+      "tmp": 27,
+      "reh": 80,
+      "feelsLikeC": 29.7,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
     },
     {
       "gu": "마포구",
-      "tmp": 26,
-      "reh": 85,
-      "feelsLikeC": 26,
+      "tmp": 27,
+      "reh": 80,
+      "feelsLikeC": 29.7,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
     },
     {
       "gu": "양천구",
-      "tmp": 27,
+      "tmp": 28,
       "reh": 80,
-      "feelsLikeC": 29.7,
+      "feelsLikeC": 32.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
     },
     {
       "gu": "강서구",
-      "tmp": 27,
+      "tmp": 28,
       "reh": 80,
-      "feelsLikeC": 29.7,
+      "feelsLikeC": 32.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
     },
     {
       "gu": "구로구",
-      "tmp": 27,
+      "tmp": 28,
       "reh": 80,
-      "feelsLikeC": 29.7,
+      "feelsLikeC": 32.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
     },
     {
       "gu": "금천구",
-      "tmp": 27,
+      "tmp": 28,
       "reh": 80,
-      "feelsLikeC": 29.7,
+      "feelsLikeC": 32.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
     },
     {
       "gu": "영등포구",
-      "tmp": 27,
+      "tmp": 28,
       "reh": 80,
-      "feelsLikeC": 29.7,
+      "feelsLikeC": 32.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
@@ -185,6 +185,15 @@
     },
     {
       "gu": "관악구",
+      "tmp": 28,
+      "reh": 80,
+      "feelsLikeC": 32.1,
+      "heatWaveAlert": false,
+      "heatWaveSource": "official",
+      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+    },
+    {
+      "gu": "서초구",
       "tmp": 27,
       "reh": 80,
       "feelsLikeC": 29.7,
@@ -193,19 +202,10 @@
       "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
     },
     {
-      "gu": "서초구",
-      "tmp": 27,
-      "reh": 85,
-      "feelsLikeC": 30.2,
-      "heatWaveAlert": false,
-      "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
-    },
-    {
       "gu": "강남구",
-      "tmp": 26,
-      "reh": 80,
-      "feelsLikeC": 26,
+      "tmp": 27,
+      "reh": 75,
+      "feelsLikeC": 29.3,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
@@ -213,8 +213,8 @@
     {
       "gu": "송파구",
       "tmp": 27,
-      "reh": 85,
-      "feelsLikeC": 30.2,
+      "reh": 80,
+      "feelsLikeC": 29.7,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
@@ -222,8 +222,8 @@
     {
       "gu": "강동구",
       "tmp": 27,
-      "reh": 85,
-      "feelsLikeC": 30.2,
+      "reh": 80,
+      "feelsLikeC": 29.7,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
