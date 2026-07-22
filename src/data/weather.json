@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-22T19:44:39.335Z",
+  "generatedAt": "2026-07-22T22:17:10.944Z",
   "baseDate": "20260723",
-  "baseTime": "0200",
+  "baseTime": "0500",
   "items": [
     {
       "gu": "종로구",
@@ -104,27 +104,27 @@
     },
     {
       "gu": "은평구",
-      "tmp": 25,
+      "tmp": 24,
       "reh": 95,
-      "feelsLikeC": 25,
+      "feelsLikeC": 24,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
     },
     {
       "gu": "서대문구",
-      "tmp": 25,
+      "tmp": 24,
       "reh": 95,
-      "feelsLikeC": 25,
+      "feelsLikeC": 24,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
     },
     {
       "gu": "마포구",
-      "tmp": 25,
+      "tmp": 24,
       "reh": 95,
-      "feelsLikeC": 25,
+      "feelsLikeC": 24,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
