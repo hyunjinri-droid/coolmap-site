@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-23T19:47:20.435Z",
+  "generatedAt": "2026-07-23T22:16:41.679Z",
   "baseDate": "20260724",
-  "baseTime": "0200",
+  "baseTime": "0500",
   "items": [
     {
       "gu": "종로구",
@@ -10,7 +10,7 @@
       "feelsLikeC": 26,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "중구",
@@ -19,16 +19,16 @@
       "feelsLikeC": 26,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "용산구",
       "tmp": 26,
-      "reh": 90,
+      "reh": 95,
       "feelsLikeC": 26,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "성동구",
@@ -37,7 +37,7 @@
       "feelsLikeC": 26,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "광진구",
@@ -46,7 +46,7 @@
       "feelsLikeC": 26,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "동대문구",
@@ -55,7 +55,7 @@
       "feelsLikeC": 26,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "중랑구",
@@ -64,7 +64,7 @@
       "feelsLikeC": 25,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "성북구",
@@ -73,7 +73,7 @@
       "feelsLikeC": 26,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "강북구",
@@ -82,7 +82,7 @@
       "feelsLikeC": 25,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "도봉구",
@@ -91,7 +91,7 @@
       "feelsLikeC": 25,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "노원구",
@@ -100,7 +100,7 @@
       "feelsLikeC": 25,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "은평구",
@@ -109,7 +109,7 @@
       "feelsLikeC": 25,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "서대문구",
@@ -118,7 +118,7 @@
       "feelsLikeC": 25,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "마포구",
@@ -127,7 +127,7 @@
       "feelsLikeC": 25,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "양천구",
@@ -136,7 +136,7 @@
       "feelsLikeC": 26,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "강서구",
@@ -145,25 +145,25 @@
       "feelsLikeC": 26,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "구로구",
-      "tmp": 26,
-      "reh": 90,
-      "feelsLikeC": 26,
-      "heatWaveAlert": false,
-      "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
-    },
-    {
-      "gu": "금천구",
       "tmp": 26,
       "reh": 95,
       "feelsLikeC": 26,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "외출하기 좋은 날씨예요"
+    },
+    {
+      "gu": "금천구",
+      "tmp": 25,
+      "reh": 95,
+      "feelsLikeC": 25,
+      "heatWaveAlert": false,
+      "heatWaveSource": "official",
+      "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "영등포구",
@@ -172,16 +172,16 @@
       "feelsLikeC": 26,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "동작구",
-      "tmp": 26,
+      "tmp": 25,
       "reh": 95,
-      "feelsLikeC": 26,
+      "feelsLikeC": 25,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "관악구",
@@ -190,16 +190,16 @@
       "feelsLikeC": 26,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "서초구",
-      "tmp": 26,
+      "tmp": 25,
       "reh": 95,
-      "feelsLikeC": 26,
+      "feelsLikeC": 25,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "강남구",
@@ -208,7 +208,7 @@
       "feelsLikeC": 26,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "송파구",
@@ -217,7 +217,7 @@
       "feelsLikeC": 26,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "강동구",
@@ -226,7 +226,7 @@
       "feelsLikeC": 26,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "외출하기 좋은 날씨예요"
     }
   ]
 }
