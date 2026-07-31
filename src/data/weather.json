@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-31T19:54:20.863Z",
+  "generatedAt": "2026-07-31T22:17:25.727Z",
   "baseDate": "20260801",
-  "baseTime": "0200",
+  "baseTime": "0500",
   "items": [
     {
       "gu": "종로구",
@@ -59,12 +59,12 @@
     },
     {
       "gu": "중랑구",
-      "tmp": 27,
+      "tmp": 26,
       "reh": 95,
-      "feelsLikeC": 31.3,
+      "feelsLikeC": 26,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
+      "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "성북구",
@@ -77,35 +77,35 @@
     },
     {
       "gu": "강북구",
-      "tmp": 27,
+      "tmp": 26,
       "reh": 95,
-      "feelsLikeC": 31.3,
+      "feelsLikeC": 26,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
+      "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "도봉구",
-      "tmp": 27,
+      "tmp": 26,
       "reh": 95,
-      "feelsLikeC": 31.3,
+      "feelsLikeC": 26,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
+      "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "노원구",
-      "tmp": 27,
+      "tmp": 26,
       "reh": 95,
-      "feelsLikeC": 31.3,
+      "feelsLikeC": 26,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
+      "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "은평구",
       "tmp": 26,
-      "reh": 95,
+      "reh": 100,
       "feelsLikeC": 26,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
@@ -114,7 +114,7 @@
     {
       "gu": "서대문구",
       "tmp": 26,
-      "reh": 95,
+      "reh": 100,
       "feelsLikeC": 26,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
@@ -123,7 +123,7 @@
     {
       "gu": "마포구",
       "tmp": 26,
-      "reh": 95,
+      "reh": 100,
       "feelsLikeC": 26,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
@@ -158,12 +158,12 @@
     },
     {
       "gu": "금천구",
-      "tmp": 27,
+      "tmp": 26,
       "reh": 95,
-      "feelsLikeC": 31.3,
+      "feelsLikeC": 26,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
+      "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "영등포구",
