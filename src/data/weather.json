@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-02T03:54:57.084Z",
+  "generatedAt": "2026-08-02T08:37:43.539Z",
   "baseDate": "20260802",
-  "baseTime": "1100",
+  "baseTime": "1700",
   "items": [
     {
       "gu": "종로구",
@@ -23,9 +23,9 @@
     },
     {
       "gu": "용산구",
-      "tmp": 33,
-      "reh": 65,
-      "feelsLikeC": 41.4,
+      "tmp": 32,
+      "reh": 60,
+      "feelsLikeC": 37.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
@@ -77,9 +77,9 @@
     },
     {
       "gu": "강북구",
-      "tmp": 33,
+      "tmp": 32,
       "reh": 60,
-      "feelsLikeC": 39.5,
+      "feelsLikeC": 37.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
@@ -104,27 +104,27 @@
     },
     {
       "gu": "은평구",
-      "tmp": 32,
+      "tmp": 31,
       "reh": 65,
-      "feelsLikeC": 38.7,
+      "feelsLikeC": 36.2,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
     },
     {
       "gu": "서대문구",
-      "tmp": 32,
+      "tmp": 31,
       "reh": 65,
-      "feelsLikeC": 38.7,
+      "feelsLikeC": 36.2,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
     },
     {
       "gu": "마포구",
-      "tmp": 32,
+      "tmp": 31,
       "reh": 65,
-      "feelsLikeC": 38.7,
+      "feelsLikeC": 36.2,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
@@ -149,9 +149,9 @@
     },
     {
       "gu": "구로구",
-      "tmp": 33,
+      "tmp": 32,
       "reh": 65,
-      "feelsLikeC": 41.4,
+      "feelsLikeC": 38.7,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
@@ -185,9 +185,9 @@
     },
     {
       "gu": "관악구",
-      "tmp": 33,
+      "tmp": 32,
       "reh": 65,
-      "feelsLikeC": 41.4,
+      "feelsLikeC": 38.7,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
