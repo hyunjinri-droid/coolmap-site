@@ -1,6 +1,115 @@
 {
-  "generatedAt": "2026-08-09T04:41:52.320Z",
+  "generatedAt": "2026-08-09T07:19:41.557Z",
   "baseDate": "20260809",
-  "baseTime": "1100",
-  "items": []
+  "baseTime": "1400",
+  "items": [
+    {
+      "gu": "마포구",
+      "tmp": 33,
+      "reh": 55,
+      "feelsLikeC": 37.8,
+      "heatWaveAlert": true,
+      "heatWaveSource": "estimated",
+      "recommendation": "오전 9시 이전, 오후 6시 이후 외출을 추천해요"
+    },
+    {
+      "gu": "양천구",
+      "tmp": 33,
+      "reh": 55,
+      "feelsLikeC": 37.8,
+      "heatWaveAlert": true,
+      "heatWaveSource": "estimated",
+      "recommendation": "오전 9시 이전, 오후 6시 이후 외출을 추천해요"
+    },
+    {
+      "gu": "강서구",
+      "tmp": 33,
+      "reh": 55,
+      "feelsLikeC": 37.8,
+      "heatWaveAlert": true,
+      "heatWaveSource": "estimated",
+      "recommendation": "오전 9시 이전, 오후 6시 이후 외출을 추천해요"
+    },
+    {
+      "gu": "구로구",
+      "tmp": 34,
+      "reh": 55,
+      "feelsLikeC": 40.2,
+      "heatWaveAlert": true,
+      "heatWaveSource": "estimated",
+      "recommendation": "오전 9시 이전, 오후 6시 이후 외출을 추천해요"
+    },
+    {
+      "gu": "금천구",
+      "tmp": 33,
+      "reh": 55,
+      "feelsLikeC": 37.8,
+      "heatWaveAlert": true,
+      "heatWaveSource": "estimated",
+      "recommendation": "오전 9시 이전, 오후 6시 이후 외출을 추천해요"
+    },
+    {
+      "gu": "영등포구",
+      "tmp": 33,
+      "reh": 55,
+      "feelsLikeC": 37.8,
+      "heatWaveAlert": true,
+      "heatWaveSource": "estimated",
+      "recommendation": "오전 9시 이전, 오후 6시 이후 외출을 추천해요"
+    },
+    {
+      "gu": "동작구",
+      "tmp": 33,
+      "reh": 55,
+      "feelsLikeC": 37.8,
+      "heatWaveAlert": true,
+      "heatWaveSource": "estimated",
+      "recommendation": "오전 9시 이전, 오후 6시 이후 외출을 추천해요"
+    },
+    {
+      "gu": "관악구",
+      "tmp": 33,
+      "reh": 65,
+      "feelsLikeC": 41.4,
+      "heatWaveAlert": true,
+      "heatWaveSource": "estimated",
+      "recommendation": "오전 9시 이전, 오후 6시 이후 외출을 추천해요"
+    },
+    {
+      "gu": "서초구",
+      "tmp": 33,
+      "reh": 55,
+      "feelsLikeC": 37.8,
+      "heatWaveAlert": true,
+      "heatWaveSource": "estimated",
+      "recommendation": "오전 9시 이전, 오후 6시 이후 외출을 추천해요"
+    },
+    {
+      "gu": "강남구",
+      "tmp": 33,
+      "reh": 65,
+      "feelsLikeC": 41.4,
+      "heatWaveAlert": true,
+      "heatWaveSource": "estimated",
+      "recommendation": "오전 9시 이전, 오후 6시 이후 외출을 추천해요"
+    },
+    {
+      "gu": "송파구",
+      "tmp": 33,
+      "reh": 55,
+      "feelsLikeC": 37.8,
+      "heatWaveAlert": true,
+      "heatWaveSource": "estimated",
+      "recommendation": "오전 9시 이전, 오후 6시 이후 외출을 추천해요"
+    },
+    {
+      "gu": "강동구",
+      "tmp": 33,
+      "reh": 55,
+      "feelsLikeC": 37.8,
+      "heatWaveAlert": true,
+      "heatWaveSource": "estimated",
+      "recommendation": "오전 9시 이전, 오후 6시 이후 외출을 추천해요"
+    }
+  ]
 }
