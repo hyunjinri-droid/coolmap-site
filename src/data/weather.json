@@ -1,229 +1,229 @@
 {
-  "generatedAt": "2026-08-15T06:58:29.002Z",
+  "generatedAt": "2026-08-15T09:42:22.854Z",
   "baseDate": "20260815",
-  "baseTime": "1400",
+  "baseTime": "1700",
   "items": [
     {
       "gu": "종로구",
-      "tmp": 31,
-      "reh": 70,
-      "feelsLikeC": 37.6,
+      "tmp": 28,
+      "reh": 80,
+      "feelsLikeC": 32.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
     },
     {
       "gu": "중구",
-      "tmp": 31,
-      "reh": 70,
-      "feelsLikeC": 37.6,
+      "tmp": 28,
+      "reh": 80,
+      "feelsLikeC": 32.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
     },
     {
       "gu": "용산구",
-      "tmp": 31,
-      "reh": 70,
-      "feelsLikeC": 37.6,
+      "tmp": 28,
+      "reh": 80,
+      "feelsLikeC": 32.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
     },
     {
       "gu": "성동구",
-      "tmp": 31,
-      "reh": 65,
-      "feelsLikeC": 36.2,
+      "tmp": 28,
+      "reh": 75,
+      "feelsLikeC": 31.4,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
     },
     {
       "gu": "광진구",
-      "tmp": 31,
-      "reh": 70,
-      "feelsLikeC": 37.6,
+      "tmp": 28,
+      "reh": 75,
+      "feelsLikeC": 31.4,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
     },
     {
       "gu": "동대문구",
-      "tmp": 31,
-      "reh": 65,
-      "feelsLikeC": 36.2,
+      "tmp": 28,
+      "reh": 75,
+      "feelsLikeC": 31.4,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
     },
     {
       "gu": "중랑구",
-      "tmp": 30,
-      "reh": 65,
-      "feelsLikeC": 33.9,
+      "tmp": 28,
+      "reh": 75,
+      "feelsLikeC": 31.4,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
     },
     {
       "gu": "성북구",
-      "tmp": 31,
-      "reh": 70,
-      "feelsLikeC": 37.6,
+      "tmp": 28,
+      "reh": 80,
+      "feelsLikeC": 32.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
     },
     {
       "gu": "강북구",
-      "tmp": 31,
-      "reh": 65,
-      "feelsLikeC": 36.2,
+      "tmp": 28,
+      "reh": 80,
+      "feelsLikeC": 32.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
     },
     {
       "gu": "도봉구",
-      "tmp": 30,
-      "reh": 70,
-      "feelsLikeC": 35,
+      "tmp": 28,
+      "reh": 80,
+      "feelsLikeC": 32.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
     },
     {
       "gu": "노원구",
-      "tmp": 30,
-      "reh": 70,
-      "feelsLikeC": 35,
+      "tmp": 28,
+      "reh": 80,
+      "feelsLikeC": 32.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
     },
     {
       "gu": "은평구",
-      "tmp": 30,
-      "reh": 70,
-      "feelsLikeC": 35,
+      "tmp": 27,
+      "reh": 80,
+      "feelsLikeC": 29.7,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
     },
     {
       "gu": "서대문구",
-      "tmp": 30,
-      "reh": 70,
-      "feelsLikeC": 35,
+      "tmp": 27,
+      "reh": 80,
+      "feelsLikeC": 29.7,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
     },
     {
       "gu": "마포구",
-      "tmp": 30,
-      "reh": 70,
-      "feelsLikeC": 35,
+      "tmp": 27,
+      "reh": 80,
+      "feelsLikeC": 29.7,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
     },
     {
       "gu": "양천구",
-      "tmp": 31,
-      "reh": 70,
-      "feelsLikeC": 37.6,
+      "tmp": 28,
+      "reh": 80,
+      "feelsLikeC": 32.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
     },
     {
       "gu": "강서구",
-      "tmp": 31,
-      "reh": 70,
-      "feelsLikeC": 37.6,
+      "tmp": 28,
+      "reh": 80,
+      "feelsLikeC": 32.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
     },
     {
       "gu": "구로구",
-      "tmp": 31,
-      "reh": 70,
-      "feelsLikeC": 37.6,
+      "tmp": 28,
+      "reh": 80,
+      "feelsLikeC": 32.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
     },
     {
       "gu": "금천구",
-      "tmp": 30,
-      "reh": 75,
-      "feelsLikeC": 36.3,
+      "tmp": 27,
+      "reh": 80,
+      "feelsLikeC": 29.7,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
     },
     {
       "gu": "영등포구",
-      "tmp": 31,
-      "reh": 70,
-      "feelsLikeC": 37.6,
+      "tmp": 28,
+      "reh": 80,
+      "feelsLikeC": 32.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
     },
     {
       "gu": "동작구",
-      "tmp": 31,
-      "reh": 70,
-      "feelsLikeC": 37.6,
+      "tmp": 27,
+      "reh": 80,
+      "feelsLikeC": 29.7,
+      "heatWaveAlert": false,
+      "heatWaveSource": "official",
+      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
+    },
+    {
+      "gu": "관악구",
+      "tmp": 28,
+      "reh": 80,
+      "feelsLikeC": 32.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
     },
     {
-      "gu": "관악구",
-      "tmp": 31,
-      "reh": 75,
-      "feelsLikeC": 39.2,
-      "heatWaveAlert": false,
-      "heatWaveSource": "official",
-      "recommendation": "비/눈 소식이 있어요. 우산을 챙기세요"
-    },
-    {
       "gu": "서초구",
-      "tmp": 31,
-      "reh": 70,
-      "feelsLikeC": 37.6,
+      "tmp": 28,
+      "reh": 80,
+      "feelsLikeC": 32.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
     },
     {
       "gu": "강남구",
-      "tmp": 31,
-      "reh": 70,
-      "feelsLikeC": 37.6,
+      "tmp": 28,
+      "reh": 75,
+      "feelsLikeC": 31.4,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
     },
     {
       "gu": "송파구",
-      "tmp": 31,
-      "reh": 70,
-      "feelsLikeC": 37.6,
+      "tmp": 28,
+      "reh": 75,
+      "feelsLikeC": 31.4,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
     },
     {
       "gu": "강동구",
-      "tmp": 31,
-      "reh": 70,
-      "feelsLikeC": 37.6,
+      "tmp": 28,
+      "reh": 75,
+      "feelsLikeC": 31.4,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
