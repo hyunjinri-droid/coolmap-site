@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-27T00:48:36.757Z",
+  "generatedAt": "2026-08-27T14:14:01.176Z",
   "baseDate": "20260827",
-  "baseTime": "0800",
+  "baseTime": "2000",
   "items": [
     {
       "gu": "종로구",
@@ -23,39 +23,39 @@
     },
     {
       "gu": "용산구",
-      "tmp": 27,
+      "tmp": 28,
       "reh": 80,
-      "feelsLikeC": 29.7,
+      "feelsLikeC": 32.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
+      "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
     },
     {
       "gu": "성동구",
-      "tmp": 27,
+      "tmp": 28,
       "reh": 80,
-      "feelsLikeC": 29.7,
+      "feelsLikeC": 32.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
+      "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
     },
     {
       "gu": "광진구",
-      "tmp": 27,
+      "tmp": 28,
       "reh": 80,
-      "feelsLikeC": 29.7,
+      "feelsLikeC": 32.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
+      "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
     },
     {
       "gu": "동대문구",
-      "tmp": 27,
+      "tmp": 28,
       "reh": 80,
-      "feelsLikeC": 29.7,
+      "feelsLikeC": 32.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
+      "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
     },
     {
       "gu": "중랑구",
@@ -104,30 +104,30 @@
     },
     {
       "gu": "은평구",
-      "tmp": 27,
-      "reh": 80,
-      "feelsLikeC": 29.7,
+      "tmp": 26,
+      "reh": 85,
+      "feelsLikeC": 26,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
+      "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "서대문구",
-      "tmp": 27,
-      "reh": 80,
-      "feelsLikeC": 29.7,
+      "tmp": 26,
+      "reh": 85,
+      "feelsLikeC": 26,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
+      "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "마포구",
-      "tmp": 27,
-      "reh": 80,
-      "feelsLikeC": 29.7,
+      "tmp": 26,
+      "reh": 85,
+      "feelsLikeC": 26,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
+      "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "양천구",
@@ -150,8 +150,8 @@
     {
       "gu": "구로구",
       "tmp": 28,
-      "reh": 75,
-      "feelsLikeC": 31.4,
+      "reh": 80,
+      "feelsLikeC": 32.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
@@ -185,48 +185,48 @@
     },
     {
       "gu": "관악구",
-      "tmp": 27,
+      "tmp": 28,
       "reh": 80,
-      "feelsLikeC": 29.7,
+      "feelsLikeC": 32.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
+      "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
     },
     {
       "gu": "서초구",
-      "tmp": 27,
+      "tmp": 28,
       "reh": 80,
-      "feelsLikeC": 29.7,
+      "feelsLikeC": 32.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
+      "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
     },
     {
       "gu": "강남구",
-      "tmp": 27,
+      "tmp": 28,
       "reh": 80,
-      "feelsLikeC": 29.7,
+      "feelsLikeC": 32.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
+      "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
     },
     {
       "gu": "송파구",
-      "tmp": 27,
+      "tmp": 28,
       "reh": 80,
-      "feelsLikeC": 29.7,
+      "feelsLikeC": 32.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
+      "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
     },
     {
       "gu": "강동구",
-      "tmp": 27,
+      "tmp": 28,
       "reh": 80,
-      "feelsLikeC": 29.7,
+      "feelsLikeC": 32.1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
-      "recommendation": "더운 편이에요. 그늘이나 실내를 이용하세요"
+      "recommendation": "무더운 날씨예요. 쿨맵을 활용하세요"
     }
   ]
 }
