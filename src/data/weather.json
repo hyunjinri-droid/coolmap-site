@@ -1,6 +1,25 @@
 {
-  "generatedAt": "2026-10-13T19:22:44.875Z",
+  "generatedAt": "2026-10-14T00:18:49.455Z",
   "baseDate": "20261014",
-  "baseTime": "0200",
-  "items": []
+  "baseTime": "0800",
+  "items": [
+    {
+      "gu": "강북구",
+      "tmp": 13,
+      "reh": 40,
+      "feelsLikeC": 13,
+      "heatWaveAlert": false,
+      "heatWaveSource": "official",
+      "recommendation": "외출하기 좋은 날씨예요"
+    },
+    {
+      "gu": "금천구",
+      "tmp": 14,
+      "reh": 40,
+      "feelsLikeC": 14,
+      "heatWaveAlert": false,
+      "heatWaveSource": "official",
+      "recommendation": "외출하기 좋은 날씨예요"
+    }
+  ]
 }
