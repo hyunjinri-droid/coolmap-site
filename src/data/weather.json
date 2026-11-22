@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-22T11:27:32.488Z",
-  "baseDate": "20261122",
-  "baseTime": "2000",
+  "generatedAt": "2026-11-22T19:42:34.603Z",
+  "baseDate": "20261123",
+  "baseTime": "0200",
   "items": [
     {
       "gu": "종로구",
       "tmp": 1,
-      "reh": 75,
+      "reh": 80,
       "feelsLikeC": 1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
@@ -15,7 +15,7 @@
     {
       "gu": "중구",
       "tmp": 1,
-      "reh": 75,
+      "reh": 80,
       "feelsLikeC": 1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
@@ -23,45 +23,45 @@
     },
     {
       "gu": "용산구",
-      "tmp": 1,
-      "reh": 75,
-      "feelsLikeC": 1,
+      "tmp": 2,
+      "reh": 80,
+      "feelsLikeC": 2,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "성동구",
-      "tmp": 1,
+      "tmp": 2,
       "reh": 75,
-      "feelsLikeC": 1,
+      "feelsLikeC": 2,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "광진구",
-      "tmp": 1,
+      "tmp": 2,
       "reh": 75,
-      "feelsLikeC": 1,
+      "feelsLikeC": 2,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "동대문구",
-      "tmp": 1,
+      "tmp": 2,
       "reh": 75,
-      "feelsLikeC": 1,
+      "feelsLikeC": 2,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "중랑구",
-      "tmp": 0,
-      "reh": 75,
-      "feelsLikeC": 0,
+      "tmp": 1,
+      "reh": 80,
+      "feelsLikeC": 1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "외출하기 좋은 날씨예요"
@@ -69,7 +69,7 @@
     {
       "gu": "성북구",
       "tmp": 1,
-      "reh": 75,
+      "reh": 80,
       "feelsLikeC": 1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
@@ -86,18 +86,18 @@
     },
     {
       "gu": "도봉구",
-      "tmp": 0,
+      "tmp": 1,
       "reh": 75,
-      "feelsLikeC": 0,
+      "feelsLikeC": 1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "노원구",
-      "tmp": 0,
+      "tmp": 1,
       "reh": 75,
-      "feelsLikeC": 0,
+      "feelsLikeC": 1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "외출하기 좋은 날씨예요"
@@ -105,7 +105,7 @@
     {
       "gu": "은평구",
       "tmp": 1,
-      "reh": 75,
+      "reh": 80,
       "feelsLikeC": 1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
@@ -114,7 +114,7 @@
     {
       "gu": "서대문구",
       "tmp": 1,
-      "reh": 75,
+      "reh": 80,
       "feelsLikeC": 1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
@@ -123,7 +123,7 @@
     {
       "gu": "마포구",
       "tmp": 1,
-      "reh": 75,
+      "reh": 80,
       "feelsLikeC": 1,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
@@ -132,7 +132,7 @@
     {
       "gu": "양천구",
       "tmp": 2,
-      "reh": 75,
+      "reh": 80,
       "feelsLikeC": 2,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
@@ -141,7 +141,7 @@
     {
       "gu": "강서구",
       "tmp": 2,
-      "reh": 75,
+      "reh": 80,
       "feelsLikeC": 2,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
@@ -150,7 +150,7 @@
     {
       "gu": "구로구",
       "tmp": 2,
-      "reh": 75,
+      "reh": 80,
       "feelsLikeC": 2,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
@@ -159,7 +159,7 @@
     {
       "gu": "금천구",
       "tmp": 2,
-      "reh": 75,
+      "reh": 80,
       "feelsLikeC": 2,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
@@ -168,7 +168,7 @@
     {
       "gu": "영등포구",
       "tmp": 2,
-      "reh": 75,
+      "reh": 80,
       "feelsLikeC": 2,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
@@ -176,9 +176,9 @@
     },
     {
       "gu": "동작구",
-      "tmp": 1,
-      "reh": 75,
-      "feelsLikeC": 1,
+      "tmp": 2,
+      "reh": 80,
+      "feelsLikeC": 2,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "외출하기 좋은 날씨예요"
@@ -186,7 +186,7 @@
     {
       "gu": "관악구",
       "tmp": 2,
-      "reh": 75,
+      "reh": 80,
       "feelsLikeC": 2,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
@@ -194,9 +194,9 @@
     },
     {
       "gu": "서초구",
-      "tmp": 1,
-      "reh": 75,
-      "feelsLikeC": 1,
+      "tmp": 2,
+      "reh": 80,
+      "feelsLikeC": 2,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "외출하기 좋은 날씨예요"
@@ -212,18 +212,18 @@
     },
     {
       "gu": "송파구",
-      "tmp": 1,
+      "tmp": 2,
       "reh": 75,
-      "feelsLikeC": 1,
+      "feelsLikeC": 2,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "외출하기 좋은 날씨예요"
     },
     {
       "gu": "강동구",
-      "tmp": 1,
+      "tmp": 2,
       "reh": 75,
-      "feelsLikeC": 1,
+      "feelsLikeC": 2,
       "heatWaveAlert": false,
       "heatWaveSource": "official",
       "recommendation": "외출하기 좋은 날씨예요"
